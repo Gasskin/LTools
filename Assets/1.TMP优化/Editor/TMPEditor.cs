@@ -30,20 +30,20 @@ public class TMPEditor
         fontAsset.atlasTextures[0] = atlas;
         fontAsset.material.mainTexture = atlas;
         
-        var importer = (TextureImporter)AssetImporter.GetAtPath(saveTexturePath);
-        importer.isReadable = false;
-        string[] platforms = { "iPhone", "Android", "Standalone" };
-        int maxSize = 4096;
-        foreach (string plat in platforms)
-        {
-            var platSetting = new TextureImporterPlatformSettings();
-            platSetting.name = plat;
-            platSetting.maxTextureSize = maxSize;
-            platSetting.format = plat == "Standalone" ? TextureImporterFormat.BC7 : TextureImporterFormat.ASTC_5x5;
-            platSetting.overridden = true;
-            importer.SetPlatformTextureSettings(platSetting);
-        }
-        importer.SaveAndReimport();
+        // var importer = (TextureImporter)AssetImporter.GetAtPath(saveTexturePath);
+        // importer.isReadable = false;
+        // string[] platforms = { "iPhone", "Android", "Standalone" };
+        // int maxSize = 4096;
+        // foreach (string plat in platforms)
+        // {
+        //     var platSetting = new TextureImporterPlatformSettings();
+        //     platSetting.name = plat;
+        //     platSetting.maxTextureSize = maxSize;
+        //     platSetting.format = plat == "Standalone" ? TextureImporterFormat.BC7 : TextureImporterFormat.ASTC_5x5;
+        //     platSetting.overridden = true;
+        //     importer.SetPlatformTextureSettings(platSetting);
+        // }
+        // importer.SaveAndReimport();
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
