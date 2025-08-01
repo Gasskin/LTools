@@ -1,20 +1,76 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using Spine.Unity;
+using UnityEditor;
 using UnityEngine;
 
 public class SpineEditor
 {
+    private static MeshFilter _meshFilter;
+    private static MeshRenderer _meshRenderer;
+    
+    private static string _savePath;
+    private static string _saveName;
+    private static string _saveMeshPath;
+    private static string _saveMainTexturePath;
+    private static string _saveMaterialPath;
+    
+    
     [MenuItem("Assets/LTools/SpineGPU优化/GenMesh")]
     public static void GenMesh()
     {
         var select = Selection.activeGameObject;
         if (select == null)
             return;
-        var meshFilter = select.GetComponent<MeshFilter>();
-        if (meshFilter == null)
+        var skeletonAnimation = select.GetComponent<SkeletonAnimation>();
+        _meshFilter = select.GetComponent<MeshFilter>();
+        _meshRenderer = select.GetComponent<MeshRenderer>();
+        if (_meshFilter == null || skeletonAnimation == null || _meshRenderer == null)
             return;
-        var saveMesh = Object.Instantiate(meshFilter.sharedMesh);
-        var saveMeshPath = AssetDatabase.GetAssetPath(select) + $"{select.name}_mesh.asset";
-        AssetDatabase.CreateAsset(saveMesh, saveMeshPath);
+        _savePath = AssetDatabase.GetAssetPath(select).Replace(".prefab", "_GPU");
+        _saveName = $"{select.name}_GPU";
+        Directory.Delete(_savePath, true);
+        Directory.CreateDirectory(_savePath);
+        CreateMesh();
+        CreateMainTexture();
+        // CreateAnimationTexture();
+        CreateMaterial();
+        CreatePrefab();
+
+        AssetDatabase.Refresh();
+    }
+
+    private static void CreateMesh()
+    {
+        var saveMesh = Object.Instantiate(_meshFilter.sharedMesh);
+        _saveMeshPath = $"{_savePath}/{_saveName}_mesh.asset";
+        AssetDatabase.CreateAsset(saveMesh, _saveMeshPath);
+        AssetDatabase.SaveAssets();
+    }
+
+    private static void CreateMainTexture()
+    {
+        var mainTextureSrcPath = AssetDatabase.GetAssetPath(_meshRenderer.sharedMaterial.mainTexture);
+        _saveMainTexturePath = $"{_savePath}/{_saveName}_main_texture.png";
+        File.Copy(mainTextureSrcPath, _saveMainTexturePath);
+        AssetDatabase.SaveAssets();
+    }
+
+    private static void CreateMaterial()
+    {
+        var saveMaterial = new Material(Shader.Find("Spine/Skeleton"));
+        _saveMaterialPath = $"{_savePath}/{_saveName}_material.mat";
+        saveMaterial.SetTexture(Shader.PropertyToID("_MainTex"), AssetDatabase.LoadAssetAtPath<Texture>(_saveMainTexturePath));
+        AssetDatabase.CreateAsset(saveMaterial, _saveMaterialPath);
+        AssetDatabase.SaveAssets();
+    }
+
+    private static void CreatePrefab()
+    {
+        var savePrefab = new GameObject();
+        savePrefab.AddComponent<MeshFilter>().sharedMesh = AssetDatabase.LoadAssetAtPath<Mesh>(_saveMeshPath);
+        savePrefab.AddComponent<MeshRenderer>().sharedMaterial = AssetDatabase.LoadAssetAtPath<Material>(_saveMaterialPath);
+        PrefabUtility.SaveAsPrefabAsset(savePrefab, $"{_savePath}/{_saveName}.prefab");
+        Object.DestroyImmediate(savePrefab);
         AssetDatabase.SaveAssets();
     }
 }
