@@ -1,0 +1,1287 @@
+fileFormatVersion: 2
+guid: 255f15b5e80bc4a45924795c8144c409
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -482442907699177703
+    second: SpineUnityGirl_GPU_main_texture_0
+  - first:
+      213: 6909020836768374772
+    second: SpineUnityGirl_GPU_main_texture_1
+  - first:
+      213: -6699469385411304921
+    second: SpineUnityGirl_GPU_main_texture_2
+  - first:
+      213: -3838633587067566399
+    second: SpineUnityGirl_GPU_main_texture_3
+  - first:
+      213: 8706882908396919078
+    second: SpineUnityGirl_GPU_main_texture_4
+  - first:
+      213: -5452013622713593050
+    second: SpineUnityGirl_GPU_main_texture_5
+  - first:
+      213: 5095545597443269850
+    second: SpineUnityGirl_GPU_main_texture_6
+  - first:
+      213: 3189604397182977319
+    second: SpineUnityGirl_GPU_main_texture_7
+  - first:
+      213: -410117852077261525
+    second: SpineUnityGirl_GPU_main_texture_8
+  - first:
+      213: -902495977316767371
+    second: SpineUnityGirl_GPU_main_texture_9
+  - first:
+      213: -5941342869294618606
+    second: SpineUnityGirl_GPU_main_texture_10
+  - first:
+      213: -8170467911205044513
+    second: SpineUnityGirl_GPU_main_texture_11
+  - first:
+      213: -1730269726854585722
+    second: SpineUnityGirl_GPU_main_texture_12
+  - first:
+      213: 4945897294554853348
+    second: SpineUnityGirl_GPU_main_texture_13
+  - first:
+      213: -7073492900054828688
+    second: SpineUnityGirl_GPU_main_texture_14
+  - first:
+      213: -224600858453886320
+    second: SpineUnityGirl_GPU_main_texture_15
+  - first:
+      213: 5508733672500468735
+    second: SpineUnityGirl_GPU_main_texture_16
+  - first:
+      213: -4629489661334974325
+    second: SpineUnityGirl_GPU_main_texture_17
+  - first:
+      213: 1746574816844425872
+    second: SpineUnityGirl_GPU_main_texture_18
+  - first:
+      213: 3243675788900811784
+    second: SpineUnityGirl_GPU_main_texture_19
+  - first:
+      213: 8775281456213564118
+    second: SpineUnityGirl_GPU_main_texture_20
+  - first:
+      213: 6262117476024173248
+    second: SpineUnityGirl_GPU_main_texture_21
+  - first:
+      213: 5844623196724064073
+    second: SpineUnityGirl_GPU_main_texture_22
+  - first:
+      213: -5603293301394465192
+    second: SpineUnityGirl_GPU_main_texture_23
+  - first:
+      213: 9128126205619916882
+    second: SpineUnityGirl_GPU_main_texture_24
+  - first:
+      213: -2226752462534160257
+    second: SpineUnityGirl_GPU_main_texture_25
+  - first:
+      213: -669035840837485342
+    second: SpineUnityGirl_GPU_main_texture_26
+  - first:
+      213: -7223637864148509690
+    second: SpineUnityGirl_GPU_main_texture_27
+  - first:
+      213: 1646606194145678066
+    second: SpineUnityGirl_GPU_main_texture_28
+  - first:
+      213: -1768280472739895471
+    second: SpineUnityGirl_GPU_main_texture_29
+  - first:
+      213: 804370676117762761
+    second: SpineUnityGirl_GPU_main_texture_30
+  - first:
+      213: 3619171565592720044
+    second: SpineUnityGirl_GPU_main_texture_31
+  - first:
+      213: 5246626522169970646
+    second: SpineUnityGirl_GPU_main_texture_32
+  - first:
+      213: 7004465169660120165
+    second: SpineUnityGirl_GPU_main_texture_33
+  - first:
+      213: -3987104071273424261
+    second: SpineUnityGirl_GPU_main_texture_34
+  - first:
+      213: 595896124215068021
+    second: SpineUnityGirl_GPU_main_texture_35
+  - first:
+      213: -1126994810807824046
+    second: SpineUnityGirl_GPU_main_texture_36
+  - first:
+      213: 550322729787469047
+    second: SpineUnityGirl_GPU_main_texture_37
+  - first:
+      213: -2440159391037768196
+    second: SpineUnityGirl_GPU_main_texture_38
+  - first:
+      213: 3699022632300582544
+    second: SpineUnityGirl_GPU_main_texture_39
+  - first:
+      213: -4170992833100056606
+    second: SpineUnityGirl_GPU_main_texture_40
+  - first:
+      213: -9012829517321183777
+    second: SpineUnityGirl_GPU_main_texture_41
+  - first:
+      213: 3472461266092523155
+    second: SpineUnityGirl_GPU_main_texture_42
+  - first:
+      213: 7987345072714982181
+    second: SpineUnityGirl_GPU_main_texture_43
+  - first:
+      213: -4121240335265447409
+    second: SpineUnityGirl_GPU_main_texture_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 480
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9171f264bb40e49f0800000000000000
+      internalID: -482442907699177703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 480
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffd95178d5c1ef50800000000000000
+      internalID: 6909020836768374772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 481
+        width: 44
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72264fad614b603a0800000000000000
+      internalID: -6699469385411304921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 480
+        width: 36
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c644fb271f6abac0800000000000000
+      internalID: -3838633587067566399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 480
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6291be7cfdf05d870800000000000000
+      internalID: 8706882908396919078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 480
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623d0930f7e8654b0800000000000000
+      internalID: -5452013622713593050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_6
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 480
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4696839b307b640800000000000000
+      internalID: 5095545597443269850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 345
+        width: 159
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7258d1ccc40c34c20800000000000000
+      internalID: 3189604397182977319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 345
+        width: 105
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d73e68cf7fe4af0800000000000000
+      internalID: -410117852077261525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_9
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 463
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579a0d4b0b0b973f0800000000000000
+      internalID: -902495977316767371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 389
+        width: 100
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218e4e2932c1c8da0800000000000000
+      internalID: -5941342869294618606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 389
+        width: 67
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde35e749baac9e80800000000000000
+      internalID: -8170467911205044513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_12
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 368
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682683dc9d8dcf7e0800000000000000
+      internalID: -1730269726854585722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_13
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 370
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4efe189826b53a440800000000000000
+      internalID: 4945897294554853348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_14
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 370
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 079fbf23fa7e5dd90800000000000000
+      internalID: -7073492900054828688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_15
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 328
+        width: 133
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09abb9f85be02ecf0800000000000000
+      internalID: -224600858453886320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_16
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 348
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb9f9fa614f27c40800000000000000
+      internalID: 5508733672500468735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 270
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8019cc5eafb0cfb0800000000000000
+      internalID: -4629489661334974325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_18
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 325
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09aa7abca841d3810800000000000000
+      internalID: 1746574816844425872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_19
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 326
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804c7fbb1f9d30d20800000000000000
+      internalID: 3243675788900811784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_20
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 325
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da9ea1bdff08c970800000000000000
+      internalID: 8775281456213564118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_21
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 233
+        width: 75
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2cf249aa287e650800000000000000
+      internalID: 6262117476024173248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_22
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 231
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94feebec4d54c1150800000000000000
+      internalID: 5844623196724064073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_23
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 231
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e9e0e0e6a1d32b0800000000000000
+      internalID: -5603293301394465192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_24
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 277
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250d8eecb6e9dae70800000000000000
+      internalID: 9128126205619916882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_25
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 299
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70dce3ee6cf811e0800000000000000
+      internalID: -2226752462534160257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_26
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 215
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec70ec827b17b6f0800000000000000
+      internalID: -669035840837485342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_27
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 267
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cdd5192ab70cb90800000000000000
+      internalID: -7223637864148509690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 4
+        width: 218
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2d2070c9be9d610800000000000000
+      internalID: 1646606194145678066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_29
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 215
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157241f574ec577e0800000000000000
+      internalID: -1768280472739895471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_30
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 218
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c27db14ed2b92b00800000000000000
+      internalID: 804370676117762761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_31
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 218
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2395c1d51e93230800000000000000
+      internalID: 3619171565592720044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_32
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 95
+        width: 101
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df851b2603cfc840800000000000000
+      internalID: 5246626522169970646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_33
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 182
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c0037e5fbd43160800000000000000
+      internalID: 7004465169660120165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_34
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 182
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7adb35c8f5faa8c0800000000000000
+      internalID: -3987104071273424261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_35
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 95
+        width: 60
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5750fd62e5c054800800000000000000
+      internalID: 595896124215068021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_36
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 100
+        width: 85
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251571ec03c1c50f0800000000000000
+      internalID: -1126994810807824046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_37
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 138
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc2ec46b9323a700800000000000000
+      internalID: 550322729787469047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 100
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd3cdd56ffc22ed0800000000000000
+      internalID: -2440159391037768196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 11
+        width: 73
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096186e5c71955330800000000000000
+      internalID: 3699022632300582544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_40
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 4
+        width: 87
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7fe5efd18ad16c0800000000000000
+      internalID: -4170992833100056606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_41
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 4
+        width: 97
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd5ae65e4ffbe280800000000000000
+      internalID: -9012829517321183777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_42
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 4
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e7fb5af19a03030800000000000000
+      internalID: 3472461266092523155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_43
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 4
+        width: 92
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523a4ad5600c8de60800000000000000
+      internalID: 7987345072714982181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpineUnityGirl_GPU_main_texture_44
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 4
+        width: 37
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02cd7610c96ec6c0800000000000000
+      internalID: -4121240335265447409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpineUnityGirl_GPU_main_texture_0: -482442907699177703
+      SpineUnityGirl_GPU_main_texture_1: 6909020836768374772
+      SpineUnityGirl_GPU_main_texture_10: -5941342869294618606
+      SpineUnityGirl_GPU_main_texture_11: -8170467911205044513
+      SpineUnityGirl_GPU_main_texture_12: -1730269726854585722
+      SpineUnityGirl_GPU_main_texture_13: 4945897294554853348
+      SpineUnityGirl_GPU_main_texture_14: -7073492900054828688
+      SpineUnityGirl_GPU_main_texture_15: -224600858453886320
+      SpineUnityGirl_GPU_main_texture_16: 5508733672500468735
+      SpineUnityGirl_GPU_main_texture_17: -4629489661334974325
+      SpineUnityGirl_GPU_main_texture_18: 1746574816844425872
+      SpineUnityGirl_GPU_main_texture_19: 3243675788900811784
+      SpineUnityGirl_GPU_main_texture_2: -6699469385411304921
+      SpineUnityGirl_GPU_main_texture_20: 8775281456213564118
+      SpineUnityGirl_GPU_main_texture_21: 6262117476024173248
+      SpineUnityGirl_GPU_main_texture_22: 5844623196724064073
+      SpineUnityGirl_GPU_main_texture_23: -5603293301394465192
+      SpineUnityGirl_GPU_main_texture_24: 9128126205619916882
+      SpineUnityGirl_GPU_main_texture_25: -2226752462534160257
+      SpineUnityGirl_GPU_main_texture_26: -669035840837485342
+      SpineUnityGirl_GPU_main_texture_27: -7223637864148509690
+      SpineUnityGirl_GPU_main_texture_28: 1646606194145678066
+      SpineUnityGirl_GPU_main_texture_29: -1768280472739895471
+      SpineUnityGirl_GPU_main_texture_3: -3838633587067566399
+      SpineUnityGirl_GPU_main_texture_30: 804370676117762761
+      SpineUnityGirl_GPU_main_texture_31: 3619171565592720044
+      SpineUnityGirl_GPU_main_texture_32: 5246626522169970646
+      SpineUnityGirl_GPU_main_texture_33: 7004465169660120165
+      SpineUnityGirl_GPU_main_texture_34: -3987104071273424261
+      SpineUnityGirl_GPU_main_texture_35: 595896124215068021
+      SpineUnityGirl_GPU_main_texture_36: -1126994810807824046
+      SpineUnityGirl_GPU_main_texture_37: 550322729787469047
+      SpineUnityGirl_GPU_main_texture_38: -2440159391037768196
+      SpineUnityGirl_GPU_main_texture_39: 3699022632300582544
+      SpineUnityGirl_GPU_main_texture_4: 8706882908396919078
+      SpineUnityGirl_GPU_main_texture_40: -4170992833100056606
+      SpineUnityGirl_GPU_main_texture_41: -9012829517321183777
+      SpineUnityGirl_GPU_main_texture_42: 3472461266092523155
+      SpineUnityGirl_GPU_main_texture_43: 7987345072714982181
+      SpineUnityGirl_GPU_main_texture_44: -4121240335265447409
+      SpineUnityGirl_GPU_main_texture_5: -5452013622713593050
+      SpineUnityGirl_GPU_main_texture_6: 5095545597443269850
+      SpineUnityGirl_GPU_main_texture_7: 3189604397182977319
+      SpineUnityGirl_GPU_main_texture_8: -410117852077261525
+      SpineUnityGirl_GPU_main_texture_9: -902495977316767371
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
