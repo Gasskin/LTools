@@ -3,28 +3,29 @@ using Spine.Unity;
 using UnityEditor;
 using UnityEngine;
 
-public class SpineEditor
+public partial class SpineEditor
 {
     private static MeshFilter _meshFilter;
     private static MeshRenderer _meshRenderer;
+    private static SkeletonAnimation _skeletonAnimation;
 
     private static string _savePath;
     private static string _saveName;
     private static string _saveMeshPath;
     private static string _saveMainTexturePath;
     private static string _saveMaterialPath;
+    private static string _saveAnimationTexture;
 
-
-    [MenuItem("Assets/LTools/SpineGPU优化/GenMesh")]
+    [MenuItem("Assets/LTools/SpineGPU优化/Gen")]
     public static void GenMesh()
     {
         var select = Selection.activeGameObject;
         if (select == null)
             return;
-        var skeletonAnimation = select.GetComponent<SkeletonAnimation>();
+        _skeletonAnimation = select.GetComponent<SkeletonAnimation>();
         _meshFilter = select.GetComponent<MeshFilter>();
         _meshRenderer = select.GetComponent<MeshRenderer>();
-        if (_meshFilter == null || skeletonAnimation == null || _meshRenderer == null)
+        if (_meshFilter == null || _skeletonAnimation == null || _meshRenderer == null)
             return;
         _savePath = AssetDatabase.GetAssetPath(select).Replace(".prefab", "_GPU");
         _saveName = $"{select.name}_GPU";
@@ -35,8 +36,10 @@ public class SpineEditor
         CreateMainTexture();
         // CreateAnimationTexture();
         CreateMaterial();
+        CreateAnimationTexture();
         CreatePrefab();
     }
+    
 
     private static void CreateMesh()
     {
@@ -65,6 +68,7 @@ public class SpineEditor
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+    
 
     private static void CreatePrefab()
     {
