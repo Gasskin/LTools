@@ -15,34 +15,28 @@ public class TestData : MonoBehaviour
     public List<FrameVerticesData> Data = new();
 
     private MeshFilter _meshFilter;
-    private SkeletonAnimation _skeletonAnimation;
 
     private int _nowFrame;
-    private float _frameDuration = 1 / 60f;
+    private float _frameDuration = 1 / 30f;
     private float _frameDown = -1f;
     
     private void Awake()
     {
         _meshFilter = GetComponent<MeshFilter>();
-        _skeletonAnimation = GetComponent<SkeletonAnimation>();
     }
 
     private void OnEnable()
     {
         _nowFrame = 0;
+        _frameDown = 0;
     }
 
     private void Update()
     {
-        var needUpdate = false;
-        var time = Time.deltaTime;
-        _frameDown -= time;
+        _frameDown -= Time.deltaTime;
         if (_frameDown <= 0)
         {
-            needUpdate = true;
-        }
-        if (needUpdate)
-        {
+            _frameDown = _frameDuration;
             if (_meshFilter != null && _meshFilter.sharedMesh != null)
             {
                 var vertices = _meshFilter.sharedMesh.vertices;
