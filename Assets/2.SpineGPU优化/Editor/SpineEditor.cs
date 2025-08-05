@@ -101,75 +101,33 @@ public partial class SpineEditor
         var frameCount = Mathf.CeilToInt(main.Duration / frameDuration);
         gpuAnimation.FrameCount = frameCount + 1;
         gpuAnimation.FramePerSecond = framePerSecond;
-        
+
         _skeletonAnimation.Initialize(true);
-        var verticesList = new List<List<Vector3>>();
-        // 第0帧，初始值
-        AddVertices(verticesList, gpuAnimation);
+        // 第0帧的初始值
+        _meshFilter.sharedMesh.GetVertices(gpuAnimation.Vertices);
 
         for (int i = 1; i <= frameCount; i++)
         {
             _skeletonAnimation.Update(frameDuration);
             _skeletonAnimation.LateUpdateMesh();
-            AddVertices(verticesList, gpuAnimation);
         }
-        var baseFrame = verticesList[0]; 
-        var maxSize = Mathf.Max(baseFrame.Count, verticesList.Count);
-        var textureSize = 4;
-        while (textureSize < maxSize)
-            textureSize += 4;
-        var texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBAFloat, false);
-        for (int i = 0; i < verticesList.Count; i++) {
-            var frame = verticesList[i];
-            for (int j = 0; j < frame.Count; j++) {
-                Vector3 v;
-
-                if (i == 0) {
-                    // 第0帧，写原始位置
-                    v = baseFrame[j];
-                } else {
-                    // 其余帧，写偏移量
-                    v = frame[j] - baseFrame[j];
-                }
-
-                int pixelIndex = i * baseFrame.Count + j;
-                int x = pixelIndex % textureSize;
-                int y = pixelIndex / textureSize;
-
-                var normX = (v.x - gpuAnimation.MinX) / (gpuAnimation.MaxX - gpuAnimation.MinX);
-                var normY = (v.y - gpuAnimation.MinY) / (gpuAnimation.MaxY - gpuAnimation.MinY);
-                var color = new Color(normX, normY, 0, 1);
-                texture.SetPixel(x, y, color);
-            }
-        }
-        texture.Apply();
-        var bytes = texture.EncodeToEXR(Texture2D.EXRFlags.OutputAsFloat);
-        var savePath = $"{_savePath}/{_saveName}_anima_texture.exr";
-        File.WriteAllBytes(savePath, bytes);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
         
-        gpuAnimation.AnimaTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-    }
-
-    private static void AddVertices(List<List<Vector3>> verticesList, GPUSkeletonAnimation animation)
-    {
-        var list = new List<Vector3>();
-        var vertices = _meshFilter.sharedMesh.vertices;
-        foreach (var v in vertices)
-        {
-            if (v.x > animation.MaxX)
-                animation.MaxX = v.x;
-            if (v.x < animation.MinX)
-                animation.MinX = v.x;
-            if (v.y > animation.MaxY)
-                animation.MaxY = v.y;
-            if (v.y < animation.MinY)
-                animation.MinY = v.y;
-            list.Add(v);
-        }
-        verticesList.Add(list);
+        // var baseFrame = verticesList[0];
+        // var maxSize = Mathf.Max(baseFrame.Count, verticesList.Count);
+        // var textureSize = 4;
+        // while (textureSize < maxSize)
+        //     textureSize += 4;
+        // var texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
+        //
+        // texture.Apply();
+        // var bytes = texture.EncodeToEXR(Texture2D.EXRFlags.OutputAsFloat);
+        // var savePath = $"{_savePath}/{_saveName}_anima_texture.exr";
+        // File.WriteAllBytes(savePath, bytes);
+        // AssetDatabase.SaveAssets();
+        // AssetDatabase.Refresh();
+        //
+        // gpuAnimation.AnimaTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
+        // AssetDatabase.SaveAssets();
+        // AssetDatabase.Refresh();
     }
 }

@@ -12,6 +12,8 @@ public class GPUSkeletonAnimation : MonoBehaviour
     public int FramePerSecond;
     public Texture2D AnimaTexture;
 
+    public List<Vector3> Vertices = new();
+
     private MeshFilter _meshFilter;
     private int _nowFrame;
     private float _frameDuration;
