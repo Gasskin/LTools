@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class OneFrameVertices
+{
+    public List<Vector3> Vertices = new();
+}
+
 public class GPUSkeletonAnimation : MonoBehaviour
 {
     public float MaxX;
@@ -12,7 +18,7 @@ public class GPUSkeletonAnimation : MonoBehaviour
     public int FramePerSecond;
     public Texture2D AnimaTexture;
 
-    public List<Vector3> Vertices = new();
+    public List<OneFrameVertices> FrameVertices = new();
 
     private MeshFilter _meshFilter;
     private int _nowFrame;
@@ -52,21 +58,9 @@ public class GPUSkeletonAnimation : MonoBehaviour
 
     private Vector3 GetVertex(int frame, int index)
     {
-        // 第0帧顶点位置（绝对坐标）
-        var baseColor = AnimaTexture.GetPixel(index, 0);
-        var baseX = baseColor.r * (MaxX - MinX) + MinX;
-        var baseY = baseColor.g * (MaxY - MinY) + MinY;
-        Vector3 basePos = new Vector3(baseX, baseY, 0);
-
-        if (frame == 0)
-            return basePos;
-
-        // 相对第0帧的偏移量
-        var deltaColor = AnimaTexture.GetPixel(index, frame);
-        var dx = deltaColor.r * (MaxX - MinX) + MinX;
-        var dy = deltaColor.g * (MaxY - MinY) + MinY;
-        Vector3 offset = new Vector3(dx, dy, 0);
-
-        return basePos + offset;
+        var vertex = FrameVertices[frame].Vertices[index];
+        vertex.x = vertex.x * (MaxX - MinX) + MinX;
+        vertex.y = vertex.y * (MaxY - MinY) + MinY;
+        return vertex;
     }
 }

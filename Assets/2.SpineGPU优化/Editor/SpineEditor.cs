@@ -39,6 +39,8 @@ public partial class SpineEditor
         CreateMaterial();
         CreatePrefab();
         CreateAnimationTexture();
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
 
 
@@ -47,8 +49,7 @@ public partial class SpineEditor
         _saveMeshPath = $"{_savePath}/{_saveName}_mesh.asset";
         var saveMesh = Object.Instantiate(_meshFilter.sharedMesh);
         AssetDatabase.CreateAsset(saveMesh, _saveMeshPath);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+        AssetDatabase.ImportAsset(_saveMeshPath);
     }
 
     private static void CreateMainTexture()
@@ -56,7 +57,7 @@ public partial class SpineEditor
         _saveMainTexturePath = $"{_savePath}/{_saveName}_main_texture.png";
         var mainTextureSrcPath = AssetDatabase.GetAssetPath(_meshRenderer.sharedMaterial.mainTexture);
         File.Copy(mainTextureSrcPath, _saveMainTexturePath);
-        AssetDatabase.SaveAssets();
+        AssetDatabase.ImportAsset(_saveMainTexturePath);
         AssetDatabase.Refresh();
     }
 
@@ -66,8 +67,7 @@ public partial class SpineEditor
         var saveMaterial = new Material(Shader.Find("Spine/Skeleton"));
         saveMaterial.SetTexture(Shader.PropertyToID("_MainTex"), AssetDatabase.LoadAssetAtPath<Texture>(_saveMainTexturePath));
         AssetDatabase.CreateAsset(saveMaterial, _saveMaterialPath);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+        AssetDatabase.ImportAsset(_saveMaterialPath);
     }
 
 
@@ -80,8 +80,7 @@ public partial class SpineEditor
         savePrefab.AddComponent<GPUSkeletonAnimation>();
         PrefabUtility.SaveAsPrefabAsset(savePrefab, _savePrefabPath);
         Object.DestroyImmediate(savePrefab);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+        AssetDatabase.ImportAsset(_savePrefabPath);
     }
 
     public static void CreateAnimationTexture()
@@ -101,33 +100,120 @@ public partial class SpineEditor
         var frameCount = Mathf.CeilToInt(main.Duration / frameDuration);
         gpuAnimation.FrameCount = frameCount + 1;
         gpuAnimation.FramePerSecond = framePerSecond;
+        gpuAnimation.MaxX = gpuAnimation.MaxY = float.MinValue;
+        gpuAnimation.MinX = gpuAnimation.MinY = float.MaxValue;
 
         _skeletonAnimation.Initialize(true);
         // 第0帧的初始值
-        _meshFilter.sharedMesh.GetVertices(gpuAnimation.Vertices);
-
+        var frameOneVertices = new List<Vector3>();
+        _meshFilter.sharedMesh.GetVertices(frameOneVertices);
+        gpuAnimation.FrameVertices.Add(new OneFrameVertices() { Vertices = frameOneVertices });
+        FindMaxAndMin(gpuAnimation, frameOneVertices);
+        // 后续帧
         for (int i = 1; i <= frameCount; i++)
         {
             _skeletonAnimation.Update(frameDuration);
             _skeletonAnimation.LateUpdateMesh();
+            var frameVertices = new List<Vector3>();
+            frameVertices.AddRange(_meshFilter.sharedMesh.vertices);
+            gpuAnimation.FrameVertices.Add(new OneFrameVertices() { Vertices = frameVertices });
+            FindMaxAndMin(gpuAnimation, frameVertices);
         }
-        
-        // var baseFrame = verticesList[0];
-        // var maxSize = Mathf.Max(baseFrame.Count, verticesList.Count);
-        // var textureSize = 4;
-        // while (textureSize < maxSize)
-        //     textureSize += 4;
-        // var texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
-        //
-        // texture.Apply();
-        // var bytes = texture.EncodeToEXR(Texture2D.EXRFlags.OutputAsFloat);
-        // var savePath = $"{_savePath}/{_saveName}_anima_texture.exr";
-        // File.WriteAllBytes(savePath, bytes);
-        // AssetDatabase.SaveAssets();
-        // AssetDatabase.Refresh();
-        //
-        // gpuAnimation.AnimaTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
-        // AssetDatabase.SaveAssets();
-        // AssetDatabase.Refresh();
+        var texture = new Texture2D(_meshFilter.sharedMesh.vertices.Length, _meshFilter.sharedMesh.vertices.Length, TextureFormat.RGBA32, false);
+
+        // 所有数据映射为0-1之间
+        for (int i = 0; i < gpuAnimation.FrameVertices.Count; i++)
+        {
+            var oneFrameVertices = gpuAnimation.FrameVertices[i].Vertices;
+            for (var j = 0; j < oneFrameVertices.Count; j++)
+            {
+                var vertex = oneFrameVertices[j];
+                var newVertex = new Vector3();
+                // 映射到0-1之间
+                newVertex.x = (vertex.x - gpuAnimation.MinX) / (gpuAnimation.MaxX - gpuAnimation.MinX);
+                newVertex.y = (vertex.y - gpuAnimation.MinY) / (gpuAnimation.MaxY - gpuAnimation.MinY);
+                newVertex.z = 0;
+                oneFrameVertices[j] = newVertex;
+            }
+            AddOneFrameVerticesToTexture(texture, i, oneFrameVertices);
+        }
+        texture.Apply();
+
+        var bytes = texture.EncodeToPNG();
+        var savePath = $"{_savePath}/{_saveName}_anima_texture.png";
+        File.WriteAllBytes(savePath, bytes);
+        AssetDatabase.ImportAsset(savePath);
+
+        gpuAnimation.AnimaTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
+
+        var textureImporter = (TextureImporter)AssetImporter.GetAtPath(savePath);
+        // 设置可读、wrap/filter模式（这些不能通过 settings 设置）
+        textureImporter.isReadable = true;
+        textureImporter.wrapMode = TextureWrapMode.Repeat;
+        textureImporter.filterMode = FilterMode.Point;
+        textureImporter.textureType = TextureImporterType.Default;
+        // 设置基础导入属性
+        var settings = new TextureImporterSettings();
+        textureImporter.ReadTextureSettings(settings);
+        settings.sRGBTexture = false;
+        settings.spriteMode = 0;
+        settings.alphaSource = TextureImporterAlphaSource.None;
+        settings.mipmapEnabled = false;
+        settings.alphaIsTransparency = false;
+        textureImporter.SetTextureSettings(settings);
+        // 设置平台格式
+        var standaloneSettings = new TextureImporterPlatformSettings
+        {
+            name = "Standalone",
+            overridden = true,
+            format = TextureImporterFormat.RGBAFloat
+        };
+        textureImporter.SetPlatformTextureSettings(standaloneSettings);
+        textureImporter.SaveAndReimport();
+
+        //2
+        // var saveTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
+        // Debug.LogError($"贴图格式：{saveTexture.format}");
+        // for (int i = 0; i < frameCount; i++)
+        // {
+        //     var vertices = gpuAnimation.FrameVertices[i].Vertices;
+        //     for (int j = 0; j < _meshFilter.sharedMesh.vertices.Length; j++)
+        //     {
+        //         Debug.LogError($"帧{i}点{j} {vertices[j]}===={saveTexture.GetPixel(i, j)}");
+        //     }
+        // }
+    }
+
+    private static void FindMaxAndMin(GPUSkeletonAnimation gpuAnimation, List<Vector3> oneFrameVertices)
+    {
+        foreach (var vertex in oneFrameVertices)
+        {
+            if (vertex.x > gpuAnimation.MaxX)
+            {
+                gpuAnimation.MaxX = vertex.x;
+            }
+            if (vertex.y > gpuAnimation.MaxY)
+            {
+                gpuAnimation.MaxY = vertex.y;
+            }
+            if (vertex.x < gpuAnimation.MinX)
+            {
+                gpuAnimation.MinX = vertex.x;
+            }
+            if (vertex.y < gpuAnimation.MinY)
+            {
+                gpuAnimation.MinY = vertex.y;
+            }
+        }
+    }
+
+    private static void AddOneFrameVerticesToTexture(Texture2D texture, int frame, List<Vector3> frameVertices)
+    {
+        for (int i = 0; i < frameVertices.Count; i++)
+        {
+            var vertex = frameVertices[i];
+            var color = new Color(vertex.x, vertex.y, 0, 1);
+            texture.SetPixel(frame, i, color);
+        }
     }
 }
