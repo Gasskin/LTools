@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Spine.Unity;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public partial class SpineEditor
 {
@@ -166,7 +168,7 @@ public partial class SpineEditor
         {
             name = "Standalone",
             overridden = true,
-            format = TextureImporterFormat.RGBAFloat
+            format = TextureImporterFormat.RGBA32
         };
         textureImporter.SetPlatformTextureSettings(standaloneSettings);
         textureImporter.SaveAndReimport();
