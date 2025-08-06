@@ -10,7 +10,6 @@ public class OneFrameVertices
 
 public class GPUSkeletonAnimation : MonoBehaviour
 {
-    public bool UseColor;
     public float MaxX;
     public float MinX;
     public float MaxY;
@@ -18,8 +17,6 @@ public class GPUSkeletonAnimation : MonoBehaviour
     public int FrameCount;
     public int FramePerSecond;
     public Texture2D AnimaTexture;
-
-    public List<OneFrameVertices> FrameVertices = new();
 
     private MeshFilter _meshFilter;
     private int _nowFrame;
@@ -34,13 +31,6 @@ public class GPUSkeletonAnimation : MonoBehaviour
         _frameDown = 0;
         _frameDuration = 1f / FramePerSecond;
         _color32Array = AnimaTexture.GetPixels32();
-        // for (int i = 0; i < FrameVertices.Count; i++)
-        // {
-        //     for (int j = 0; j < FrameVertices[i].Vertices.Count; j++)
-        //     {
-        //         Debug.LogError($"{FrameVertices[i].Vertices[j]}===={AnimaTexture.GetPixel(i, j)}");
-        //     }
-        // }
     }
 
     private void Update()
@@ -68,23 +58,13 @@ public class GPUSkeletonAnimation : MonoBehaviour
 
     private Vector3 GetVertex(int frame, int index)
     {
-        if (UseColor)
-        {
-            var color32 = _color32Array[frame * AnimaTexture.width + index];
-            var vertex = new Vector3();
-            var x = UnpackBit88ToFloat(color32.r, color32.g);
-            var y = UnpackBit88ToFloat(color32.b, color32.a);
-            vertex.x = x * (MaxX - MinX) + MinX;
-            vertex.y = y * (MaxY - MinY) + MinY;
-            return vertex;
-        }
-        else
-        {
-            var vertex = FrameVertices[frame].Vertices[index];
-            vertex.x = vertex.x * (MaxX - MinX) + MinX;
-            vertex.y = vertex.y * (MaxY - MinY) + MinY;
-            return vertex;
-        }
+        var color32 = _color32Array[frame * AnimaTexture.width + index];
+        var vertex = new Vector3();
+        var x = UnpackBit88ToFloat(color32.r, color32.g);
+        var y = UnpackBit88ToFloat(color32.b, color32.a);
+        vertex.x = x * (MaxX - MinX) + MinX;
+        vertex.y = y * (MaxY - MinY) + MinY;
+        return vertex;
     }
     
     private float UnpackBit88ToFloat(byte high, byte low)

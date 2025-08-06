@@ -60,6 +60,12 @@ public partial class SpineEditor
         var mainTextureSrcPath = AssetDatabase.GetAssetPath(_meshRenderer.sharedMaterial.mainTexture);
         File.Copy(mainTextureSrcPath, _saveMainTexturePath);
         AssetDatabase.ImportAsset(_saveMainTexturePath);
+
+        var import = (TextureImporter)AssetImporter.GetAtPath(_saveMainTexturePath);
+        import.textureType = default;
+        import.sRGBTexture = false;
+        import.SaveAndReimport();
+        
         AssetDatabase.Refresh();
     }
 
@@ -106,10 +112,11 @@ public partial class SpineEditor
         gpuAnimation.MinX = gpuAnimation.MinY = float.MaxValue;
 
         _skeletonAnimation.Initialize(true);
+        var vertices = new List<Vector3>();
         // 第0帧的初始值
         var frameOneVertices = new List<Vector3>();
         _meshFilter.sharedMesh.GetVertices(frameOneVertices);
-        gpuAnimation.FrameVertices.Add(new OneFrameVertices() { Vertices = frameOneVertices });
+        vertices.AddRange(frameOneVertices);
         FindMaxAndMin(gpuAnimation, frameOneVertices);
         // 后续帧
         for (int i = 1; i <= frameCount; i++)
@@ -118,47 +125,29 @@ public partial class SpineEditor
             _skeletonAnimation.LateUpdateMesh();
             var frameVertices = new List<Vector3>();
             frameVertices.AddRange(_meshFilter.sharedMesh.vertices);
-            gpuAnimation.FrameVertices.Add(new OneFrameVertices() { Vertices = frameVertices });
+            vertices.AddRange(frameVertices);
             FindMaxAndMin(gpuAnimation, frameVertices);
         }
 
         // 所有数据映射为0-1之间
-        for (int i = 0; i < gpuAnimation.FrameVertices.Count; i++)
+        for (int i = 0; i < vertices.Count; i++)
         {
-            var oneFrameVertices = gpuAnimation.FrameVertices[i].Vertices;
-            for (var j = 0; j < oneFrameVertices.Count; j++)
-            {
-                var vertex = oneFrameVertices[j];
-                var newVertex = new Vector3();
-                // 映射到0-1之间
-                newVertex.x = (vertex.x - gpuAnimation.MinX) / (gpuAnimation.MaxX - gpuAnimation.MinX);
-                newVertex.y = (vertex.y - gpuAnimation.MinY) / (gpuAnimation.MaxY - gpuAnimation.MinY);
-                newVertex.z = 0;
-                oneFrameVertices[j] = newVertex;
-            }
-            // AddOneFrameVerticesToTexture(texture, i, oneFrameVertices);
+            var vertex = vertices[i];
+            var newVertex = new Vector3();
+            // 映射到0-1之间
+            newVertex.x = (vertex.x - gpuAnimation.MinX) / (gpuAnimation.MaxX - gpuAnimation.MinX);
+            newVertex.y = (vertex.y - gpuAnimation.MinY) / (gpuAnimation.MaxY - gpuAnimation.MinY);
+            newVertex.z = 0;
+            vertices[i] = newVertex;
         }
-        var texture = new Texture2D(_meshFilter.sharedMesh.vertices.Length, _meshFilter.sharedMesh.vertices.Length, TextureFormat.RGBA32, false);
-        var color32Array = new Color32[texture.GetPixels().Length];
-        for (int i = 0; i < _meshFilter.sharedMesh.vertices.Length; i++)
+        var texture = new Texture2D(_meshFilter.sharedMesh.vertices.Length, gpuAnimation.FrameCount, TextureFormat.RGBA32, false);
+        var color32Array = new Color32[vertices.Count];
+        for (int i = 0; i < vertices.Count; i++)
         {
-            for (var j = 0; j < _meshFilter.sharedMesh.vertices.Length; j++)
-            {
-                var index = i * _meshFilter.sharedMesh.vertices.Length + j;
-                var empty = i >= gpuAnimation.FrameVertices.Count;
-                if (empty)
-                {
-                    color32Array[index] = new Color32(0,0,0,0);
-                }
-                else
-                {
-                    var oneFrameVertices = gpuAnimation.FrameVertices[i].Vertices;
-                    var vertex = oneFrameVertices[j];
-                    var (x1, x2) = PackFloat2Bit88(vertex.x);
-                    var (y1, y2) = PackFloat2Bit88(vertex.y);
-                    color32Array[index] = new Color32(x1, x2, y1, y2);
-                }
-            }
+            var vertex = vertices[i];
+            var (x1, x2) = PackFloatToBit88(vertex.x);
+            var (y1, y2) = PackFloatToBit88(vertex.y);
+            color32Array[i] = new Color32(x1, x2, y1, y2);
         }
         texture.SetPixels32(color32Array);
         texture.Apply();
@@ -194,18 +183,6 @@ public partial class SpineEditor
         };
         textureImporter.SetPlatformTextureSettings(standaloneSettings);
         textureImporter.SaveAndReimport();
-
-        //2
-        // var saveTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
-        // Debug.LogError($"贴图格式：{saveTexture.format}");
-        // for (int i = 0; i < frameCount; i++)
-        // {
-        //     var vertices = gpuAnimation.FrameVertices[i].Vertices;
-        //     for (int j = 0; j < _meshFilter.sharedMesh.vertices.Length; j++)
-        //     {
-        //         Debug.LogError($"帧{i}点{j} {vertices[j]}===={saveTexture.GetPixel(i, j)}");
-        //     }
-        // }
     }
 
     private static void FindMaxAndMin(GPUSkeletonAnimation gpuAnimation, List<Vector3> oneFrameVertices)
@@ -231,17 +208,7 @@ public partial class SpineEditor
         }
     }
 
-    private static void AddOneFrameVerticesToTexture(Texture2D texture, int frame, List<Vector3> frameVertices)
-    {
-        for (int i = 0; i < frameVertices.Count; i++)
-        {
-            var vertex = frameVertices[i];
-            var color = new Color(vertex.x, vertex.y, 0, 1);
-            texture.SetPixel(i, frame, color);
-        }
-    }
-
-    private static (byte, byte) PackFloat2Bit88(float source)
+    private static (byte, byte) PackFloatToBit88(float source)
     {
         // 转为 16 位整数
         int intVal = Mathf.RoundToInt(source * 65535f);
