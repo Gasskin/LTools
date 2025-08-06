@@ -121,7 +121,6 @@ public partial class SpineEditor
             gpuAnimation.FrameVertices.Add(new OneFrameVertices() { Vertices = frameVertices });
             FindMaxAndMin(gpuAnimation, frameVertices);
         }
-        var texture = new Texture2D(_meshFilter.sharedMesh.vertices.Length, _meshFilter.sharedMesh.vertices.Length, TextureFormat.RGBA32, false);
 
         // 所有数据映射为0-1之间
         for (int i = 0; i < gpuAnimation.FrameVertices.Count; i++)
@@ -137,8 +136,31 @@ public partial class SpineEditor
                 newVertex.z = 0;
                 oneFrameVertices[j] = newVertex;
             }
-            AddOneFrameVerticesToTexture(texture, i, oneFrameVertices);
+            // AddOneFrameVerticesToTexture(texture, i, oneFrameVertices);
         }
+        var texture = new Texture2D(_meshFilter.sharedMesh.vertices.Length, _meshFilter.sharedMesh.vertices.Length, TextureFormat.RGBA32, false);
+        var color32Array = new Color32[texture.GetPixels().Length];
+        for (int i = 0; i < _meshFilter.sharedMesh.vertices.Length; i++)
+        {
+            for (var j = 0; j < _meshFilter.sharedMesh.vertices.Length; j++)
+            {
+                var index = i * _meshFilter.sharedMesh.vertices.Length + j;
+                var empty = i >= gpuAnimation.FrameVertices.Count;
+                if (empty)
+                {
+                    color32Array[index] = new Color32(0,0,0,0);
+                }
+                else
+                {
+                    var oneFrameVertices = gpuAnimation.FrameVertices[i].Vertices;
+                    var vertex = oneFrameVertices[j];
+                    var (x1, x2) = PackFloat2Bit88(vertex.x);
+                    var (y1, y2) = PackFloat2Bit88(vertex.y);
+                    color32Array[index] = new Color32(x1, x2, y1, y2);
+                }
+            }
+        }
+        texture.SetPixels32(color32Array);
         texture.Apply();
 
         var bytes = texture.EncodeToPNG();
@@ -159,8 +181,8 @@ public partial class SpineEditor
         textureImporter.ReadTextureSettings(settings);
         settings.sRGBTexture = false;
         settings.spriteMode = 0;
-        settings.alphaSource = TextureImporterAlphaSource.None;
         settings.mipmapEnabled = false;
+        settings.alphaSource = TextureImporterAlphaSource.FromInput;
         settings.alphaIsTransparency = false;
         textureImporter.SetTextureSettings(settings);
         // 设置平台格式
@@ -215,7 +237,18 @@ public partial class SpineEditor
         {
             var vertex = frameVertices[i];
             var color = new Color(vertex.x, vertex.y, 0, 1);
-            texture.SetPixel(frame, i, color);
+            texture.SetPixel(i, frame, color);
         }
+    }
+
+    private static (byte, byte) PackFloat2Bit88(float source)
+    {
+        // 转为 16 位整数
+        int intVal = Mathf.RoundToInt(source * 65535f);
+        // 高8位
+        var x = (byte)((intVal >> 8) & 0xFF);
+        // 低8位
+        var y = (byte)(intVal & 0xFF);
+        return (x, y);
     }
 }

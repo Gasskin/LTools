@@ -25,6 +25,7 @@ public class GPUSkeletonAnimation : MonoBehaviour
     private int _nowFrame;
     private float _frameDuration;
     private float _frameDown = -1f;
+    private Color32[] _color32Array;
 
     private void OnEnable()
     {
@@ -32,6 +33,7 @@ public class GPUSkeletonAnimation : MonoBehaviour
         _nowFrame = 0;
         _frameDown = 0;
         _frameDuration = 1f / FramePerSecond;
+        _color32Array = AnimaTexture.GetPixels32();
         // for (int i = 0; i < FrameVertices.Count; i++)
         // {
         //     for (int j = 0; j < FrameVertices[i].Vertices.Count; j++)
@@ -68,10 +70,12 @@ public class GPUSkeletonAnimation : MonoBehaviour
     {
         if (UseColor)
         {
-            var color = AnimaTexture.GetPixel(frame, index);
+            var color32 = _color32Array[frame * AnimaTexture.width + index];
             var vertex = new Vector3();
-            vertex.x = color.r * (MaxX - MinX) + MinX;
-            vertex.y = color.g * (MaxY - MinY) + MinY;
+            var x = UnpackBit88ToFloat(color32.r, color32.g);
+            var y = UnpackBit88ToFloat(color32.b, color32.a);
+            vertex.x = x * (MaxX - MinX) + MinX;
+            vertex.y = y * (MaxY - MinY) + MinY;
             return vertex;
         }
         else
@@ -81,5 +85,11 @@ public class GPUSkeletonAnimation : MonoBehaviour
             vertex.y = vertex.y * (MaxY - MinY) + MinY;
             return vertex;
         }
+    }
+    
+    private float UnpackBit88ToFloat(byte high, byte low)
+    {
+        int intVal = (high << 8) | low;         
+        return intVal / 65535f;                
     }
 }
