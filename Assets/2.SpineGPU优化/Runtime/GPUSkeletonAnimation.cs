@@ -10,6 +10,8 @@ public class OneFrameVertices
 
 public class GPUSkeletonAnimation : MonoBehaviour
 {
+    private static readonly int _frameIndex = Shader.PropertyToID("_FrameIndex");
+    
     public float MaxX;
     public float MinX;
     public float MaxY;
@@ -18,19 +20,19 @@ public class GPUSkeletonAnimation : MonoBehaviour
     public int FramePerSecond;
     public Texture2D AnimaTexture;
 
-    private MeshFilter _meshFilter;
     private int _nowFrame;
     private float _frameDuration;
     private float _frameDown = -1f;
     private Color32[] _color32Array;
-
+    private Material _material;
+    
     private void OnEnable()
     {
-        _meshFilter = GetComponent<MeshFilter>();
         _nowFrame = 0;
         _frameDown = 0;
         _frameDuration = 1f / FramePerSecond;
         _color32Array = AnimaTexture.GetPixels32();
+        _material = GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     private void Update()
@@ -39,20 +41,21 @@ public class GPUSkeletonAnimation : MonoBehaviour
         if (_frameDown <= 0)
         {
             _frameDown = _frameDuration;
-            if (_meshFilter != null && _meshFilter.sharedMesh != null)
-            {
-                var vertices = _meshFilter.sharedMesh.vertices;
-                for (int i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i] = GetVertex(_nowFrame, i);
-                }
-                _meshFilter.sharedMesh.vertices = vertices;
-            }
+            // if (_meshFilter != null && _meshFilter.sharedMesh != null)
+            // {
+            //     var vertices = _meshFilter.sharedMesh.vertices;
+            //     for (int i = 0; i < vertices.Length; i++)
+            //     {
+            //         vertices[i] = GetVertex(_nowFrame, i);
+            //     }
+            //     _meshFilter.sharedMesh.vertices = vertices;
+            // }
+            _material.SetFloat(_frameIndex, _nowFrame);
             _nowFrame++;
-            if (_nowFrame >= FrameCount)
-            {
-                _nowFrame = 0;
-            }
+            // if (_nowFrame >= FrameCount)
+            // {
+            //     _nowFrame = 0;
+            // }
         }
     }
 

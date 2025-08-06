@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25125101c0e3486c86c05026daaf09a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxX: 0
-  MinX: 0
-  MaxY: 0
-  MinY: 0
-  FrameCount: 0
-  FramePerSecond: 0
-  AnimaTexture: {fileID: 0}
+  MaxX: 3.118109
+  MinX: -2.174067
+  MaxY: 4.846743
+  MinY: -0.9844883
+  FrameCount: 121
+  FramePerSecond: 60
+  AnimaTexture: {fileID: 2800000, guid: c9eaad317f2012a47818899264049ac9, type: 3}
