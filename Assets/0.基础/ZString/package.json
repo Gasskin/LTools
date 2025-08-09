@@ -1,0 +1,22 @@
+{
+  "name": "com.cysharp.zstring",
+  "displayName": "ZString",
+  "version": "2.6.0",
+  "unity": "2018.4",
+  "description": "Zero Allocation StringBuilder for .NET Core and Unity.",
+  "keywords": [
+    "String",
+    "Performance"
+  ],
+  "license": "MIT",
+  "category": "Scripting",
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "Required Managed DLLs",
+      "description": "Import Required Managed DLLs",
+      "path": "Samples~/RequiredManagedDLLs"
+    }
+  ],
+  "_fingerprint": "03bd5e4fd99e98d8652e18cf0e7b03900bc4de7c"
+}
