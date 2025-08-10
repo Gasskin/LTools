@@ -1,0 +1,40 @@
+using System;
+using CodeBind;
+using UnityEngine;
+using UnityGameFramework.Runtime;
+
+public partial class TestLoginForm : AUGuiForm
+{
+    protected internal override void OnOpen(object userData)
+    {
+        base.OnOpen(userData);
+        InitBind(GetComponent<CSCodeBindMono>());
+        
+        ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
+    }
+
+    private void Update()
+    {
+        UnityEngine.Debug.Log(1111);
+    }
+
+    protected internal override void OnClose(bool isShutdown, object userData)
+    {
+        base.OnClose(isShutdown, userData);
+        ConfirmBtn.onClick.RemoveAllListeners();
+    }
+
+    private void OnConfirmBtnClick()
+    {
+        TipTMPText.text = DateTime.UtcNow.ToString("yyyy:MM:dd HH:mm:ss");
+        var d = new TestTipForm.TestTipFormOpenData()
+        {
+            TipShow = DateTime.UtcNow.ToString("yyyy:MM:dd HH:mm:ss"),
+            OnConfirm = (() =>
+            {
+                Debug.LogError(999);
+            })
+        };
+        UIComponent.Instance.OpenUIForm("Assets/5.UI/Demo/TestTipForm.prefab", "Default", false, d);
+    }
+}
