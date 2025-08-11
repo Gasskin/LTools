@@ -26,9 +26,10 @@ public class TpSpriteAtlas : ScriptableObject
     
     public Sprite GetSprite(string spriteName)
     {
-        _spriteDic.TryGetValue(spriteName, out var sprite);
-        if (sprite == null)
+        if (!_spriteDic.TryGetValue(spriteName, out var sprite) || sprite == null)
         {
+            if (sprite == null)
+                _spriteDic.Remove(spriteName);
             for (int i = 0; i < _spriteNames.Count; i++)
             {
                 if (_spriteNames[i] == spriteName)

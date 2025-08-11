@@ -42,4 +42,9 @@ public class TexturePackerEditor
         cmd.PackByCmd(TexturePackerCmd.AlgorithmType.PolygonTrim);
         new CreateTpAtlas(TexturePackerCmd.SAVE_PATH, cmd.PackName).Create(true);
     }
+    
+    [MenuItem("Assets/LTools/Texture Packer/GenOutline")]
+    public static void GenOutline()
+    {
+    }
 }
