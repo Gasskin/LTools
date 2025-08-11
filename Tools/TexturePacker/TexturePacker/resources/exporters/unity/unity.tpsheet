@@ -1,0 +1,9 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# {{smartUpdateKey}}
+#
+{% load TransformCoords %}{{tp|ExportData|safe}}

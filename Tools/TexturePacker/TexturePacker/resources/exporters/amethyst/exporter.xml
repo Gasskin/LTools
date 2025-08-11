@@ -1,0 +1,69 @@
+<exporter version="1.0">
+
+    <!-- identifier of the exporter -->
+    <name>amethyst</name>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>Amethyst</displayName>
+
+    <!-- description of the exporter -->
+    <description>Amethyst: Data-driven game engine written in Rust</description>
+
+    <!-- exporter version -->
+    <version>1.0</version>
+
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>data</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>Data file</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>ron</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>Sprite sheet data</description>
+
+            <!-- name of the template file -->
+            <template>amethyst.ron</template>
+        </file>
+        <file>
+            <!-- name of this file variable -->
+            <name>spriteids</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>Sprite IDs file</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>rs</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>Sprite IDs file</description>
+
+            <!-- name of the template file -->
+            <template>amethyst.rs</template>
+
+            <!-- file is not created if user doesn't specify file name -->
+            <optional>true</optional>
+        </file>
+    </files>
+
+    <supportsTrimming>true</supportsTrimming>
+
+    <supportsRotation>false</supportsRotation>
+
+    <supportsPivotPoint>false</supportsPivotPoint>
+
+    <spriteOrigin>TopLeft</spriteOrigin>
+
+    <supportsNPOT>true</supportsNPOT>
+
+    <supportsMultiPack>false</supportsMultiPack>
+
+    <supportsTrimSpriteNames>no</supportsTrimSpriteNames>
+
+    <supportsTextureSubPath>no</supportsTextureSubPath>
+
+</exporter>

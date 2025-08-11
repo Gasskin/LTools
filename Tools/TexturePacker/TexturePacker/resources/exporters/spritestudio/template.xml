@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SpriteStudioCellMap version="1.00.01">
+{% load TransformCoords %}
+	<name>{{texture.trimmedName}}</name>
+	<generator>TexturePacker</generator>
+	<packed>1</packed>
+	<exportPath></exportPath>
+	<imagePath>{{texture.absoluteFileName}}</imagePath>
+	<pixelSize>{{texture.size.width}} {{texture.size.height}}</pixelSize>
+	<imagePathAtImport>{{texture.absoluteFileName}}</imagePathAtImport>
+	<packInfoFilePath></packInfoFilePath>
+	<texPackSettings>
+		<maxSize>4096 4096</maxSize>
+		<forcePo2>1</forcePo2>
+		<forceSquare>0</forceSquare>
+		<margin>0</margin>
+		<padding>1</padding>
+	</texPackSettings>
+	<cells>{% for sprite in allSprites %}
+		<cell>
+			<name>{{sprite.trimmedName}}</name>
+			<pos>{{sprite.frameRect.x}} {{sprite.frameRect.y}}</pos>{% if exporterProperties.writePivots %}
+			<pivot>{{sprite|TrimmedPivotX}} {{sprite|TrimmedMirroredPivotY}}</pivot>{% endif %}
+			<size>{{sprite.frameRect.width}} {{sprite.frameRect.height}}</size>
+			<rotated>0</rotated>
+			<orgImageName>{{sprite.fileData.absoluteFileName}}</orgImageName>{% if false %}
+			<_debug>
+				<trimmed>{{sprite.trimmed}}</trimmed>
+				<size>{{sprite.size.width}} {{sprite.size.height}}</size>
+				<frameRect>{{sprite.frameRect.x}} {{sprite.frameRect.y}} {{sprite.frameRect.width}} {{sprite.frameRect.height}}</frameRect>
+				<sourceRect>{{sprite.sourceRect.x}} {{sprite.sourceRect.y}}  {{sprite.sourceRect.width}} {{sprite.sourceRect.height}}</sourceRect>
+				<cornerOffset>{{sprite.cornerOffset.x}} {{sprite.cornerOffset.y}}</cornerOffset>
+				<untrimmedSize>{{sprite.untrimmedSize.width}} {{sprite.untrimmedSize.height}}</untrimmedSize>
+				<centerOffset>{{sprite.centerOffset.x}} {{sprite.centerOffset.y}}</centerOffset>
+				<pivotPoint>{{sprite.pivotPoint.x}} {{sprite.pivotPoint.y}}</pivotPoint>
+				<pivotPointNorm>{{sprite.pivotPointNorm.x}} {{sprite.pivotPointNorm.y}}</pivotPointNorm>
+			</_debug>{% endif %}
+		</cell>{% if not forloop.last %}{% endif %}{% endfor %}
+    </cells>
+</SpriteStudioCellMap>

@@ -1,0 +1,102 @@
+<exporter version="1.0">
+    <!-- identifier of the exporter -->
+    <name>orx</name>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>Orx</displayName>
+
+    <!-- description of the exporter -->
+    <description>Orx Exporter</description>
+
+    <!-- exporter version -->
+    <version>1.1</version>  
+
+    <!-- currently only one file allowed - more to come with update -->
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>orxconfig</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>Orx config file</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>ini</fileExtension>
+
+            <!-- name of the template file -->
+            <template>orx.ini</template>
+        </file>
+    </files>
+
+    <!-- target framework supports trimming -->
+    <supportsTrimming>true</supportsTrimming>
+
+    <!-- target framework supports rotated sprites -->
+    <supportsRotation>false</supportsRotation>
+
+    <!-- rotated sprites direction (cw/ccw) -->
+    <rotationDirection>cw</rotationDirection>
+
+    <!-- supports npot sizes -->
+    <supportsNPOT>true</supportsNPOT>
+
+    <!-- supports file name stripping (remove .png etc) -->
+    <supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+
+    <!-- supports texure subpath -->
+    <supportsTextureSubPath>yes</supportsTextureSubPath>
+
+    <supportsPivotPoint>true</supportsPivotPoint>
+
+    <supportsAnimations>true</supportsAnimations>
+	
+	<!-- You can specify default values for the following TexturePacker settings.
+         They are used if a new project is created or if the data format of
+         an existing project is changed and "Update to recommended values"
+         is checked. The complete <defaults> block is optional. -->
+    <defaults>
+        <writePivotPoints>true</writePivotPoints>
+        <defaultPivotPoint>0.5,0.5</defaultPivotPoint>
+    </defaults>
+    
+    <properties>
+        <property>
+            <name>includeComments</name>
+            <type>bool</type>
+            <displayName>Include comments</displayName>
+            <toolTip>Output comments in produced result.</toolTip>
+            <isAdvanced>true</isAdvanced>
+        </property>
+        <property>
+            <name>optimizeSectionNames</name>
+            <type>bool</type>
+            <displayName>Optimize section names</displayName>
+            <toolTip>Optimize image paths to pascal-cased section names.</toolTip>
+            <default>true</default>
+        </property>
+        <property>
+            <name>pixelSnap</name>
+            <type>bool</type>
+            <displayName>Pixel-snap pivot points</displayName>
+            <toolTip>Snap center pivot points to whole pixels.</toolTip>
+            <default>false</default>
+            <isAdvanced>true</isAdvanced>
+        </property>
+        <property>
+            <name>keepInCache</name>
+            <type>bool</type>
+            <displayName>Keep in cache</displayName>
+            <toolTip>Keep textures and animations in cache.</toolTip>
+            <default>false</default>
+            <isAdvanced>true</isAdvanced>
+        </property>
+        <property>
+            <name>keyDuration</name>
+            <type>string</type>
+            <displayName>Key duration</displayName>
+            <toolTip>Animation key duration in seconds.</toolTip>
+            <default>0.1</default>
+            <isAdvanced>true</isAdvanced>
+        </property>
+    </properties>
+</exporter>

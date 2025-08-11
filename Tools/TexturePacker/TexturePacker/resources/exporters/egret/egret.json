@@ -1,0 +1,12 @@
+{% load TransformName %}{
+  "file": "{{texture.fullName}}",
+  "frames": { {% for sprite in allSprites %}
+    "{% if settings.trimSpriteNames %}{{sprite.trimmedName|FixSpriteName}}{% else %}{{sprite.fullName|FixSpriteName}}{% endif %}": {"x":{{sprite.frameRect.x}},"y":{{sprite.frameRect.y}},"w":{{sprite.frameRect.width}},"h":{{sprite.frameRect.height}}{% if sprite.trimmed %},"offX":{{sprite.cornerOffset.x}},"offY":{{sprite.cornerOffset.y}},"sourceW":{{sprite.untrimmedSize.width}},"sourceH":{{sprite.untrimmedSize.height}}{% endif %}}{% if not forloop.last %},{% endif %}{% endfor %}
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "exporter": "egret",
+    "sheetsize": "{{texture.size.width}}x{{texture.size.height}}",
+    "smartupdate": "{{smartUpdateKey}}"
+  }
+}

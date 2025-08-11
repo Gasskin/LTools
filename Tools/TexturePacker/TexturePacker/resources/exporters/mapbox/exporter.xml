@@ -1,0 +1,57 @@
+<exporter version="1.0">
+  <!-- identifier of the exporter -->
+  <name>mapbox</name>
+
+  <!-- display name of the exporter for the combo box -->
+  <displayName>Mapbox</displayName>
+
+  <!-- description of the exporter -->
+  <description>Exporter for Mapbox (mapbox.com)</description>
+
+  <!-- exporter version -->
+  <version>1.0</version>
+
+  <!-- currently only one file allowed -
+       more to come soon -->
+  <files>
+      <file>
+          <!-- name of this file variable -->
+          <name>mapboxjson</name>
+
+          <!-- human readable name (for GUI) -->
+          <displayName>Mapbox POI file</displayName>
+
+          <!-- file extension for the file -->
+          <fileExtension>json</fileExtension>
+
+          <!-- description what the file contains, used in tooltips in the GUI -->
+          <description>JSON data file containing POI sprites for Mapbox </description>
+
+          <!-- name of the template file -->
+          <template>mapbox.json</template>
+      </file>
+  </files>
+
+  <!-- target framework supports trimming -->
+  <supportsTrimming>no</supportsTrimming>
+
+  <!-- target framework supports rotated sprites -->
+  <supportsRotation>no</supportsRotation>
+
+  <!-- rotated sprites direction (cw/ccw) -->
+  <rotationDirection>cw</rotationDirection>
+
+  <!-- supports npot sizes -->
+  <supportsNPOT>true</supportsNPOT>
+
+  <!-- supports file name stripping (remove .png etc.) -->
+  <supportsTrimSpriteNames>no</supportsTrimSpriteNames>
+
+  <!-- supports texture subpath -->
+  <supportsTextureSubPath>no</supportsTextureSubPath>
+
+  <!-- enable pivot point editor -->
+  <supportsPivotPoint>no</supportsPivotPoint>
+
+
+</exporter>

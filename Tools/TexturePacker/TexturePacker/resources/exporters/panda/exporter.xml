@@ -1,0 +1,63 @@
+<exporter version="1.0">
+  <!-- identifier of the exporter -->
+  <name>panda</name>
+
+  <!-- for compatiblility only: allow referencing the exporter as "pandaexporter" -->
+  <nameAlias>pandaexporter</nameAlias>
+
+  <!-- display name of the exporter for the combo box -->
+  <displayName>Panda 2</displayName>
+
+  <!-- description of the exporter -->
+  <description>Exporter for Panda 2</description>
+
+  <!-- exporter version -->
+  <version>2.0</version>
+
+  <!-- currently only one file allowed -
+       more to come soon -->
+  <files>
+      <file>
+          <!-- name of this file variable -->
+          <name>pandajson</name>
+
+          <!-- human readable name (for GUI) -->
+          <displayName>Panda 2 (atlas)</displayName>
+
+          <!-- file extension for the file -->
+          <fileExtension>atlas</fileExtension>
+
+          <!-- description what the file contains, used in tooltips in the GUI -->
+          <description>JSON data file for Panda 2</description>
+
+          <!-- name of the template file -->
+          <template>panda2.json</template>
+      </file>
+  </files>
+
+  <!-- target framework supports trimming -->
+  <supportsTrimming>yes</supportsTrimming>
+
+  <!-- target framework supports rotated sprites -->
+  <supportsRotation>no</supportsRotation>
+
+  <!-- rotated sprites direction (cw/ccw) -->
+  <rotationDirection>cw</rotationDirection>
+
+  <!-- supports npot sizes -->
+  <supportsNPOT>true</supportsNPOT>
+
+  <!-- supports file name stripping (remove .png etc.) -->
+  <supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+
+  <!-- supports texture subpath -->
+  <supportsTextureSubPath>no</supportsTextureSubPath>
+
+  <!-- enable pivot point editor -->
+  <supportsPivotPoint>true</supportsPivotPoint>
+
+  <defaults>
+    <defaultPivotPoint>0.0,0.0</defaultPivotPoint>
+  </defaults>
+
+</exporter>

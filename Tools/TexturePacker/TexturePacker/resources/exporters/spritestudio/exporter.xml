@@ -1,0 +1,75 @@
+<exporter version="1.0">
+  <!-- identifier of the exporter -->
+  <name>spritestudio</name>
+ 
+  <!-- display name of the exporter for the combo box -->
+  <displayName>SpriteStudio</displayName>
+ 
+  <!-- description of the exporter -->
+  <description>OPTPiX SpriteStudio 6 CellMap File.</description>
+ 
+  <!-- exporter version -->
+  <version>1.2</version>
+ 
+  <!-- currently only one file allowed -
+       more to come soon -->
+  <files>
+      <file>
+          <!-- name of this file variable -->
+          <name>ssce</name>
+ 
+          <!-- human readable name (for GUI) -->
+          <displayName>SpriteStudio ssce file</displayName>
+ 
+          <!-- file extension for the file -->
+          <fileExtension>ssce</fileExtension>
+ 
+          <!-- name of the template file -->
+          <template>template.xml</template>
+      </file>
+  </files>
+ 
+  <!-- target framework supports trimming -->
+  <supportsTrimming>yes</supportsTrimming>
+ 
+  <!-- target framework supports rotated sprites -->
+  <supportsRotation>no</supportsRotation>
+ 
+  <!-- rotated sprites direction (cw/ccw) -->
+  <rotationDirection>cw</rotationDirection>
+ 
+  <!-- supports npot sizes -->
+  <supportsNPOT>yes</supportsNPOT>
+ 
+  <!-- supports file name stripping (remove .png etc.) -->
+  <supportsTrimSpriteNames>no</supportsTrimSpriteNames>
+ 
+  <!-- supports texture subpath -->
+  <supportsTextureSubPath>yes</supportsTextureSubPath>
+
+  <!-- enable pivot points -->
+  <supportsPivotPoint>true</supportsPivotPoint>
+
+  <!-- The following <properties> block shows how to define custom exporter properties.
+         For each property TexturePacker displays an input field in the UI.
+         The values entered there are stored in the TPS file and passed to the
+         exporter when publishing. There they can be used in the template file. -->
+  <properties>
+      <property>
+          <!-- Property name, used in tps file + exporter template: -->
+          <name>writePivots</name>
+          <!-- Property type, supported values: string, bool -->
+          <type>bool</type>
+          <!-- Default value for new projects -->
+          <default>true</default>
+          <!-- Name and tooltip text used for the input field in the UI: -->
+          <displayName>Write pivots</displayName>
+          <toolTip>Select false if you want to keep pivots specified on SpriteStudio by reload, otherwise pivots will be overwritten with the value specified on TexturePacker.</toolTip>
+          <!-- Only displayed if advanced settings are expanded (small triangle
+               in front of Data settings) -->
+          <isAdvanced>false</isAdvanced>
+      </property>
+      <!-- more <property>s can be defined here -->
+  </properties>
+
+</exporter>

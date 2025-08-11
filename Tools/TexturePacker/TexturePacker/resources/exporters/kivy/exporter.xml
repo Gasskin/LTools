@@ -1,0 +1,60 @@
+<exporter version="1.0">
+    <!-- identifier of the exporter -->
+    <name>kivy</name>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>Kivy</displayName>
+
+    <!-- description of the exporter -->
+    <description>JSON atlas for Kivy</description>
+
+    <!-- exporter version -->
+    <version>1.0</version>
+
+    <!-- currently only one file allowed - more to come with update -->
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>data</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>Atlas file</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>atlas</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>JSON atlas file for Kivy</description>
+
+            <!-- name of the template file -->
+            <template>kivy.atlas</template>
+
+            <!-- one json file for all multi-pack sheets -->
+            <hasSeparateMultiPackFiles>false</hasSeparateMultiPackFiles>
+        </file>
+    </files>
+
+
+    <!-- target framework supports trimming -->
+    <supportsTrimming>false</supportsTrimming>
+
+    <!-- target framework supports rotated sprites -->
+    <supportsRotation>false</supportsRotation>
+
+    <!-- rotated sprites direction (cw/ccw) -->
+    <rotationDirection>cw</rotationDirection>
+
+    <!-- supports npot sizes -->
+    <supportsNPOT>true</supportsNPOT>
+
+    <!-- supports file name stripping (remove .png etc) -->
+    <supportsTrimSpriteNames>false</supportsTrimSpriteNames>
+
+    <!-- supports texure subpath -->
+    <supportsTextureSubPath>no</supportsTextureSubPath>
+
+    <supportsPivotPoint>false</supportsPivotPoint>
+
+    <supportsAnimations>false</supportsAnimations>
+
+</exporter>

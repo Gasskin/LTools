@@ -1,0 +1,22 @@
+{
+    "frames": { {% for sprite in allSprites %}
+        "{% if settings.trimSpriteNames %}{{sprite.trimmedName}}{% else %}{{sprite.fullName}}{% endif %}": {
+            "x": {{sprite.frameRect.x}}, 
+            "y": {{sprite.frameRect.y}},
+            "w": {{sprite.untrimmedSize.width}},
+            "h": {{sprite.untrimmedSize.height}},
+            "sx": {{sprite.sourceRect.x}},
+            "sy": {{sprite.sourceRect.y}},
+            "sw": {{sprite.sourceRect.width}},
+            "sh": {{sprite.sourceRect.height}}{% if settings.writePivotPoints %},
+            "ax": {{sprite.pivotPoint.x}},
+            "ay": {{sprite.pivotPoint.y}} {% endif %}
+        }{% if not forloop.last %}, {% endif %}{% endfor %}
+    },
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "exporter": "panda",
+        "image": "{{texture.fullName}}",
+        "smartupdate": "{{smartUpdateKey}}"
+    }
+}

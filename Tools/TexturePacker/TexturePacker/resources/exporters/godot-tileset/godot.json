@@ -1,0 +1,1 @@
+{% load godot %}{{tp|exportData|safe}}

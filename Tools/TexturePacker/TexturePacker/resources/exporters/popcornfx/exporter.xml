@@ -1,0 +1,49 @@
+<exporter version="1.0">
+    <!-- identifier of the exporter -->
+    <name>popcornfx</name>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>PopcornFX</displayName>
+
+    <!-- description of the exporter -->
+    <description>Exporter for PopcornFX</description>
+
+    <!-- exporter version -->
+    <version>1.0</version>
+
+    <!-- currently only one file allowed -
+       more to come soon -->
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>popcornfx</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>PopcornFX (pkat)</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>pkat</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>PKAT data file for PopcornFX</description>
+
+            <!-- name of the template file -->
+            <template>popcornfx.pkat</template>
+        </file>
+    </files>
+
+    <!-- target framework supports trimming -->
+    <supportsTrimming>false</supportsTrimming>
+
+    <!-- target framework supports rotated sprites -->
+    <supportsRotation>false</supportsRotation>
+
+    <!-- supports npot sizes -->
+    <supportsNPOT>true</supportsNPOT>
+
+    <!-- default values -->
+    <defaults>
+        <sizeConstraints>POT</sizeConstraints>     <!-- POT, WordAligned, AnySize -->
+    </defaults>
+
+</exporter>

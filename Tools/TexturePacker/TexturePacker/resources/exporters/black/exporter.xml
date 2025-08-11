@@ -1,0 +1,24 @@
+<exporter version="1.0">
+  <name>black</name>
+  <nameAlias>blackexporter</nameAlias>
+  <displayName>Blacksmith 2D</displayName>
+  <description>Exporter for Blacksmith 2D Engine</description>
+  <version>1.0</version>
+  <files>
+    <file>
+      <name>blackjson</name>
+      <displayName>Black (json)</displayName>
+      <fileExtension>json</fileExtension>
+      <description>JSON data file for Black Engine</description>
+      <template>black.json</template>
+    </file>
+  </files>
+  <supportsTrimming>true</supportsTrimming>
+  <supportsRotation>no</supportsRotation>
+  <rotationDirection>cw</rotationDirection>
+  <supportsNPOT>true</supportsNPOT>
+  <supportsTrimSpriteNames>true</supportsTrimSpriteNames>
+  <supportsTextureSubPath>no</supportsTextureSubPath>
+  <supportsPivotPoint>true</supportsPivotPoint>
+  <supportsScale9>true</supportsScale9>
+</exporter>

@@ -1,0 +1,59 @@
+<exporter version="1.0">
+    <!-- identifier of the exporter -->
+    <name>godot3-tileset</name>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>Godot 3 TileSet</displayName>
+
+    <!-- description of the exporter -->
+    <description>Godot 3 TileSet - requires importer</description>
+
+    <!-- exporter version -->
+    <version>3.0</version>
+
+    <!-- currently only one file allowed - more to come with update -->
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>data</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>TileSet file</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>tpset</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>TileSet Data for Godot 3</description>
+
+            <!-- name of the template file -->
+            <template>godot.json</template>
+
+            <!-- one json file for all multi-pack sheets -->
+            <hasSeparateMultiPackFiles>false</hasSeparateMultiPackFiles>
+        </file>
+    </files>
+
+    <!-- target framework supports trimming -->
+    <supportsTrimming>true</supportsTrimming>
+
+    <!-- target framework supports rotated sprites -->
+    <supportsRotation>false</supportsRotation>
+
+    <!-- rotated sprites direction (cw/ccw) -->
+    <rotationDirection>cw</rotationDirection>
+
+    <!-- supports npot sizes -->
+    <supportsNPOT>true</supportsNPOT>
+
+    <!-- supports file name stripping (remove .png etc) -->
+    <supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+
+    <!-- supports texure subpath -->
+    <supportsTextureSubPath>no</supportsTextureSubPath>
+
+    <supportsPivotPoint>false</supportsPivotPoint>
+
+    <supportsAnimations>false</supportsAnimations>
+
+</exporter>

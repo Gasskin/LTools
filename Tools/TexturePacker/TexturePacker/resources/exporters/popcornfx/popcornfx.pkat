@@ -1,0 +1,2 @@
+{% load PopcornFX %}{{texture.size.width|SetGlobalWidth}}{{texture.size.width|SetGlobalHeight}}{% for sprite in allSprites %}{{sprite.frameRect.x|SetStartX}}{{sprite.frameRect.y|SetStartY}}{{sprite.frameRect.x|BuildRelStartX}}, {{sprite.frameRect.y|BuildRelStartY}}, {{sprite.frameRect.width|BuildRelEndX}}, {{sprite.frameRect.height|BuildRelEndY}}
+{% endfor %}
