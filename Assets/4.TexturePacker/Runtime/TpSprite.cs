@@ -12,7 +12,6 @@ public class TpSprite : Image
     protected override void OnEnable()
     {
         base.OnEnable();
-        useSpriteMesh = _atlas.IsPolygon;
         UpdateSprite();
     }
 
@@ -27,6 +26,7 @@ public class TpSprite : Image
         sprite = null;
         if (_atlas == null || string.IsNullOrEmpty(_spriteName))
             return;
+        useSpriteMesh = _atlas.IsPolygon;
         sprite = _atlas.GetSprite(_spriteName);
     }
 }
