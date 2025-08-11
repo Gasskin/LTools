@@ -46,5 +46,6 @@ public class TexturePackerEditor
     [MenuItem("Assets/LTools/Texture Packer/GenOutline")]
     public static void GenOutline()
     {
+
     }
 }

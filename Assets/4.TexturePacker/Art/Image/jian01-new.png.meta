@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8cff8107913160b4eb0a49d7378abf11
+guid: 14aaf3a3c9e38a646a0d41ef12a63ebe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,8 +100,8 @@ TextureImporter:
       name: jian01
       rect:
         serializedVersion: 2
-        x: 0
-        y: 204
+        x: 1
+        y: 3
         width: 111
         height: 120
       alignment: 9
@@ -112,118 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d333824b24e93654bbb6aac31d90b100
-      internalID: -534887163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jian02
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 143
-        width: 109
-        height: 108
-      alignment: 9
-      pivot: {x: 0.49541286, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1caf5eee0eb70cd4cbae9d59cd640b3d
-      internalID: 1151503661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jian03
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 93
-        width: 104
-        height: 111
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 282f5601f353c044ead38f48d87528c1
-      internalID: 1130716430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pei01
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 210
-        width: 106
-        height: 114
-      alignment: 9
-      pivot: {x: 0.46698114, y: 0.50438595}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c05febd553ed2ed4199bf4470b2fc3e0
-      internalID: -239147004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pei02
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 2
-        width: 85
-        height: 94
-      alignment: 9
-      pivot: {x: 0.49411765, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3071ee0019591214299537f0e61684ac
-      internalID: -447688366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pei03
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 54
-        width: 93
-        height: 99
-      alignment: 9
-      pivot: {x: 0.516129, y: 0.5050505}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbe20cf032cc3f845a3591c9735ec0e4
-      internalID: 868633154
+      spriteID: 5745cdccd9305c149a6a13d437d2ddcb
+      internalID: -2097330782
       vertices: []
       indices: 
       edges: []
@@ -232,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4b5f52a46f7f8cc419cd3a7065cc13f7
+    spriteID: 16f325d73d5bd6443a59cc383ee5c9c4
     internalID: 0
     vertices: []
     indices: 
@@ -242,12 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      jian01: -534887163
-      jian02: 1151503661
-      jian03: 1130716430
-      pei01: -239147004
-      pei02: -447688366
-      pei03: 868633154
+      jian01: -2097330782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
