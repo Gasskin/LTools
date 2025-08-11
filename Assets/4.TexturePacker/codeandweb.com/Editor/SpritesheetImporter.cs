@@ -27,7 +27,6 @@ namespace TexturePackerImporter
 
         void OnPreprocessTexture()
         {
-            Dbg.enabled = true;
             TextureImporter importer = assetImporter as TextureImporter;
             SheetInfo sheet = TexturePackerImporter.getSheetInfo(importer);
             if (sheet != null)

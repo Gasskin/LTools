@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateTpAtlas
 {
-    private const string SAVE_PATH = @"Assets/4.TexturePacker/TpAtlas";
+    private const string SAVE_PATH = @"Assets/4.TexturePacker/Bundles/TpAtlas";
 
     private string _saveTexturePath;
     private string _packName;

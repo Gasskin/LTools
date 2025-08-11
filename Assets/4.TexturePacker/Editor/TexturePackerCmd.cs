@@ -23,39 +23,42 @@ public class TexturePackerCmd
         PolygonTrim,
     }
 
-    public const string PACK_TEMP_PATH = @"Assets\TexturePackerTemp";
-    
     private const string TEXTURE_PACKER_PATH = @".\Tools\TexturePacker\TexturePacker\bin\TexturePacker.exe";
-    public const string SAVE_PATH = @"Assets/4.TexturePacker/Art";
 
     public string PackName { get; }
 
-    private string _targetFolderPath;
+    private string _targetPath;
+
+    private string _savePath;
 
     private List<SpritesheetCollection> _spriteSheets = new();
 
-    public TexturePackerCmd(string targetFolderPath)
+    public TexturePackerCmd(string targetPath, string savePath)
     {
-        _targetFolderPath = targetFolderPath;
-        PackName = Path.GetFileName(targetFolderPath);
+        _targetPath = targetPath;
+        _savePath = savePath;
+        PackName = Path.GetFileNameWithoutExtension(targetPath);
     }
 
-    public void PackByCmd(AlgorithmType type)
+    public void PackByCmd(AlgorithmType type, bool deleteExist = true)
     {
-        var files = Directory.GetFiles(SAVE_PATH);
-        foreach (var file in files)
+        if (deleteExist)
         {
-            if (file.Contains(PackName))
-                File.Delete(file);
+            var files = Directory.GetFiles(_savePath);
+            foreach (var file in files)
+            {
+                if (file.Contains(PackName))
+                    File.Delete(file);
+            }
         }
 
         Debug.Log("===== Pack Start =====");
-        Debug.Log($"TargetFolderPath: {_targetFolderPath}");
+        Debug.Log($"TargetFolderPath: {_targetPath}");
         Debug.Log($"PackName: {PackName}");
-        var arguments = $"\"{_targetFolderPath}\"";
+        var arguments = $"\"{_targetPath}\"";
         arguments += " --texture-format png";
-        arguments += $" --sheet \"{Path.Combine(SAVE_PATH, PackName + "-{n}.png")}\"";
-        arguments += $" --data \"{Path.Combine(SAVE_PATH, PackName + "-{n}.tpsheet")}\"";
+        arguments += $" --sheet \"{Path.Combine(_savePath, PackName + "-{n}.png")}\"";
+        arguments += $" --data \"{Path.Combine(_savePath, PackName + "-{n}.tpsheet")}\"";
         arguments += " --format unity-texture2d";
         switch (type)
         {

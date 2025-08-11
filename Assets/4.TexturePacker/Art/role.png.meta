@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 14aaf3a3c9e38a646a0d41ef12a63ebe
+guid: 200a8fd58a993a04288fefbafb654b2a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2390339217489246741
+    second: role_0
+  - first:
+      213: -8799978733675075017
+    second: role_1
+  - first:
+      213: -7895524293762407022
+    second: role_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jian01
+      name: role_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
-        width: 111
-        height: 120
-      alignment: 9
-      pivot: {x: 0.509009, y: 0.5}
+        x: 19
+        y: 15
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5745cdccd9305c149a6a13d437d2ddcb
-      internalID: -2097330782
+      spriteID: be54ed0752fc3ded0800000000000000
+      internalID: -2390339217489246741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 15
+        width: 114
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a2e4c47f130e580800000000000000
+      internalID: -8799978733675075017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 1471
+        height: 1640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29523d2bc767d6290800000000000000
+      internalID: -7895524293762407022
       vertices: []
       indices: 
       edges: []
@@ -122,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 16f325d73d5bd6443a59cc383ee5c9c4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      jian01: -2097330782
+      role_0: -2390339217489246741
+      role_1: -8799978733675075017
+      role_2: -7895524293762407022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
