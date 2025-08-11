@@ -26,7 +26,7 @@ public class TexturePackerCmd
     public const string PACK_TEMP_PATH = @"Assets\TexturePackerTemp";
     
     private const string TEXTURE_PACKER_PATH = @".\Tools\TexturePacker\TexturePacker\bin\TexturePacker.exe";
-    private const string SAVE_PATH = @"Assets/4.TexturePacker/Art";
+    public const string SAVE_PATH = @"Assets/4.TexturePacker/Art";
 
     public string PackName { get; }
 
@@ -110,15 +110,5 @@ public class TexturePackerCmd
         Debug.Log("===== Pack End =====");
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
-    }
-
-    public void ImportNewTextures()
-    {
-    }
-
-    private void ImportOneTexture(string texturePath, string sheetPath)
-    {
-        var sheet = new SpritesheetCollection();
-        sheet.loadSheetData(sheetPath);
     }
 }
