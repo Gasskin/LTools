@@ -20,9 +20,10 @@ MonoBehaviour:
   - pei02
   - pei03
   _sprites:
-  - {fileID: 525588481, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
-  - {fileID: -1256445142, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
-  - {fileID: 877725323, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
-  - {fileID: 2049140845, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
-  - {fileID: 1645899962, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
-  - {fileID: -1243593139, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: 538126963, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: 276442852, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: -704197397, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: 539234361, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: 1114126611, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  - {fileID: 382435504, guid: 8cff8107913160b4eb0a49d7378abf11, type: 3}
+  IsPolygon: 0

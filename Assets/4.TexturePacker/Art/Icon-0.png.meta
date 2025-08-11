@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f718e16b00899f64599c80f4b52af991
-      internalID: 525588481
+      spriteID: 90955b14ee03ed045892b4991e7eca7f
+      internalID: 538126963
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 813754a8a55da6f4b90b776774924eae
-      internalID: -1256445142
+      spriteID: 6e33c15013b4b67448a469f4f417e985
+      internalID: 276442852
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a14a407796ce598499f00da752eb0d70
-      internalID: 877725323
+      spriteID: acc313b60e134ee4e929b27dfbba2d4e
+      internalID: -704197397
       vertices: []
       indices: 
       edges: []
@@ -178,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42aa259db0aebf54a907e7b68591fdd2
-      internalID: 2049140845
+      spriteID: bd78e129b4347ba45a88987545b887b9
+      internalID: 539234361
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e063f84d0227d4992b529a4f560418
-      internalID: 1645899962
+      spriteID: 106f0d20f67ad844ea6f7ba67d15cd5b
+      internalID: 1114126611
       vertices: []
       indices: 
       edges: []
@@ -222,8 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb6cf47b2cbbf314db0ea7bb85ae3500
-      internalID: -1243593139
+      spriteID: 3c8e406fe7b90fd4f8fb9447272409ae
+      internalID: 382435504
       vertices: []
       indices: 
       edges: []
@@ -232,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c588aecce8c7b1f4ea346158b03e452d
+    spriteID: ff999b2adf40e8a48a3ec81a551c3f34
     internalID: 0
     vertices: []
     indices: 
@@ -242,12 +242,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      jian01: 525588481
-      jian02: -1256445142
-      jian03: 877725323
-      pei01: 2049140845
-      pei02: 1645899962
-      pei03: -1243593139
+      jian01: 538126963
+      jian02: 276442852
+      jian03: -704197397
+      pei01: 539234361
+      pei02: 1114126611
+      pei03: 382435504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -103,5 +103,12 @@ public class TpSpriteAtlas : ScriptableObject
             }
         }
     }
+    
+    public void Clear()
+    {
+        _spriteNames = null;
+        _sprites = null;
+    }
+    
 #endif
 }
