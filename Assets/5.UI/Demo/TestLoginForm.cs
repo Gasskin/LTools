@@ -13,9 +13,9 @@ public partial class TestLoginForm : AUGuiForm
         ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
     }
 
-    private void Update()
+    protected internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
     {
-        UnityEngine.Debug.Log(1111);
+        base.OnUpdate(elapseSeconds, realElapseSeconds);
     }
 
     protected internal override void OnClose(bool isShutdown, object userData)

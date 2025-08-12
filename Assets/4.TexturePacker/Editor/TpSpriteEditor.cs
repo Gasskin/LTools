@@ -69,9 +69,11 @@ public class TpSpriteEditor : ImageEditor
         private void LoadTpAtlasTextures(TpSpriteAtlas tpAtlas)
         {
             _sprites.Clear();
-            for (int i = 0; i < tpAtlas.Count; i++)
+            for (int i = 0; i < int.MaxValue; i++)
             {
                 var sprite = tpAtlas.GetSpriteByIndex(i);
+                if (sprite == null) 
+                    break;
                 _sprites.Add(sprite);
             }
         }

@@ -1,29 +1,30 @@
-using System;
 using System.Collections.Generic;
+using ProtoBuf;
 using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
+
 
 [CreateAssetMenu(fileName = "TpSpriteAtlas", menuName = "Create/ScriptableObjects/TpSpriteAtlas", order = 1)]
 public class TpSpriteAtlas : ScriptableObject
 {
     public int Count => _spriteNames.Count;
-    
+
     [SerializeField, Searchable]
     private List<string> _spriteNames = new();
 
     [SerializeField, Searchable]
     private List<Sprite> _sprites = new();
 
-    public bool IsPolygon;
-    
     private Dictionary<string, Sprite> _spriteDic = new();
-    
+
 #if UNITY_EDITOR
+    
     private List<Sprite> _spriteClones = new();
     private HashSet<string> _nameCheck = new();
 #endif
-    
+
     public Sprite GetSprite(string spriteName)
     {
         if (!_spriteDic.TryGetValue(spriteName, out var sprite) || sprite == null)
@@ -53,7 +54,7 @@ public class TpSpriteAtlas : ScriptableObject
         return null;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
 #if UNITY_EDITOR
         foreach (var sprite in _spriteClones)
@@ -73,8 +74,8 @@ public class TpSpriteAtlas : ScriptableObject
         }
         return _sprites[idx];
     }
-    
-    
+
+
     public void AddSprites(Object[] sprite, bool init)
     {
         if (init)
@@ -104,12 +105,12 @@ public class TpSpriteAtlas : ScriptableObject
             }
         }
     }
-    
+
     public void Clear()
     {
         _spriteNames = null;
         _sprites = null;
     }
-    
+
 #endif
 }

@@ -17,6 +17,7 @@ using UnityEditor;
 #if UNITY_2021_2_OR_NEWER
 using UnityEditor.U2D.Sprites;
 using System.Collections.Generic;
+using System.IO;
 #endif
 
 
@@ -24,7 +25,6 @@ namespace TexturePackerImporter
 {
     public class SpritesheetImporter : AssetPostprocessor
     {
-
         void OnPreprocessTexture()
         {
             TextureImporter importer = assetImporter as TextureImporter;
@@ -46,10 +46,31 @@ namespace TexturePackerImporter
         {
             var dataProvider = GetSpriteEditorDataProvider(importer);
             var spriteNameFileIdDataProvider = dataProvider.GetDataProvider<ISpriteNameFileIdDataProvider>();
-
             var oldIds = spriteNameFileIdDataProvider.GetNameFileIdPairs();
             SpriteRect[] rects = sheetInfoToSpriteRects(sheet);
             SpriteNameFileIdPair[] ids = generateSpriteIds(oldIds, rects);
+
+            //
+            if (!importer.assetPath.Contains("Image"))
+            {
+                var atlasName = Path.GetFileNameWithoutExtension(importer.assetPath).Split("-")[0];
+                var artPath = $"{TexturePackerEditor.ART_ATLAS_PATH}/{atlasName}";
+                for (int i = 0; i < rects.Length; i++)
+                {
+                    var rect = rects[i];
+                    var id = ids[i];
+                    var artSpritePath = $"{artPath}/{id.name}.png";
+                    var artSprite = AssetDatabase.LoadAssetAtPath<Sprite>(artSpritePath);
+                    if (artSprite != null)
+                    {
+                        rect.border = artSprite.border;
+                    }
+                    else
+                    {
+                        Debug.LogError($"Art目录不存在：{artSpritePath}");
+                    }
+                }
+            }
 
             dataProvider.SetSpriteRects(rects);
             spriteNameFileIdDataProvider.SetNameFileIdPairs(ids);
@@ -92,7 +113,7 @@ namespace TexturePackerImporter
 
 
         private static SpriteNameFileIdPair[] generateSpriteIds(IEnumerable<SpriteNameFileIdPair> oldIds,
-                                                                SpriteRect[] sprites)
+            SpriteRect[] sprites)
         {
             SpriteNameFileIdPair[] newIds = new SpriteNameFileIdPair[sprites.Length];
 
@@ -118,6 +139,5 @@ namespace TexturePackerImporter
             return GUID.Generate();
         }
 #endif
-
     }
 }

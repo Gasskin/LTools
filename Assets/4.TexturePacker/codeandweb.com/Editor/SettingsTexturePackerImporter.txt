@@ -1,9 +1,9 @@
 version: 2
 tpsheetFileNames:
-- Assets/4.TexturePacker/Art/Icon-0.tpsheet
+- Assets/4.TexturePacker/Art/TpAtlas/Icon-0.tpsheet
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 textureFileNames:
-- Assets/4.TexturePacker/Art/Icon-0.png
+- Assets/4.TexturePacker/Art/TpAtlas/Icon-0.png
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 normalmapFileNames:
 - 

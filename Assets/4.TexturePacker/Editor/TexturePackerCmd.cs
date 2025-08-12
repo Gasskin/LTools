@@ -20,45 +20,32 @@ public class TexturePackerCmd
         RectTrimDisPos,
 
         // 多边形裁切
-        PolygonTrim,
+        // PolygonTrim,
     }
 
     private const string TEXTURE_PACKER_PATH = @".\Tools\TexturePacker\TexturePacker\bin\TexturePacker.exe";
 
-    public string PackName { get; }
+    public string PackName { get; private set; }
 
-    private string _targetPath;
 
-    private string _savePath;
-
-    private List<SpritesheetCollection> _spriteSheets = new();
-
-    public TexturePackerCmd(string targetPath, string savePath)
+    public void PackFolder(string targetFolder, string savePath, AlgorithmType type)
     {
-        _targetPath = targetPath;
-        _savePath = savePath;
-        PackName = Path.GetFileNameWithoutExtension(targetPath);
-    }
-
-    public void PackByCmd(AlgorithmType type, bool deleteExist = true)
-    {
-        if (deleteExist)
+        PackName = Path.GetFileName(targetFolder);
+        
+        var files = Directory.GetFiles(savePath);
+        foreach (var file in files)
         {
-            var files = Directory.GetFiles(_savePath);
-            foreach (var file in files)
-            {
-                if (file.Contains(PackName))
-                    File.Delete(file);
-            }
+            if (file.Contains(PackName))
+                File.Delete(file);
         }
 
         Debug.Log("===== Pack Start =====");
-        Debug.Log($"TargetFolderPath: {_targetPath}");
+        Debug.Log($"TargetFolderPath: {savePath}");
         Debug.Log($"PackName: {PackName}");
-        var arguments = $"\"{_targetPath}\"";
+        var arguments = $"\"{savePath}\"";
         arguments += " --texture-format png";
-        arguments += $" --sheet \"{Path.Combine(_savePath, PackName + "-{n}.png")}\"";
-        arguments += $" --data \"{Path.Combine(_savePath, PackName + "-{n}.tpsheet")}\"";
+        arguments += $" --sheet \"{Path.Combine(savePath, PackName + "-{n}.png")}\"";
+        arguments += $" --data \"{Path.Combine(savePath, PackName + "-{n}.tpsheet")}\"";
         arguments += " --format unity-texture2d";
         switch (type)
         {
@@ -74,10 +61,10 @@ public class TexturePackerCmd
                 arguments += " --algorithm MaxRects";
                 arguments += " --trim-mode CropKeepPos";
                 break;
-            case AlgorithmType.PolygonTrim:
-                arguments += " --algorithm Polygon";
-                arguments += " --trim-mode Polygon";
-                break;
+            // case AlgorithmType.PolygonTrim:
+            //     arguments += " --algorithm Polygon";
+            //     arguments += " --trim-mode Polygon";
+            //     break;
         }
         arguments += " --max-width 2048";
         arguments += " --max-height 2048";
@@ -111,6 +98,57 @@ public class TexturePackerCmd
             return;
         }
         Debug.Log("===== Pack End =====");
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+    }
+
+    public void PackOneImagePolygonTrim(string targetImagePath)
+    {
+        Debug.Log("===== Pack Start =====");
+        Debug.Log($"TargetImage: {targetImagePath}");
+        var arguments = $"\"{targetImagePath}\"";
+        arguments += " --texture-format png";
+        arguments += $" --sheet \"{targetImagePath.Replace(".png","") + "-polygon.png"}\"";
+        arguments += $" --data \"{targetImagePath.Replace(".png","") + "-polygon.tpsheet"}\"";
+        arguments += " --format unity-texture2d";
+        arguments += " --algorithm Polygon";
+        arguments += " --trim-mode Polygon";
+        arguments += " --max-width 2048";
+        arguments += " --max-height 2048";
+        arguments += " --shape-padding 2";
+        arguments += " --border-padding 0";
+        arguments += " --extrude 0";
+        arguments += " --size-constraints AnySize";
+        // arguments += " --multipack";
+
+        Debug.Log(arguments);
+
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = TEXTURE_PACKER_PATH,
+            Arguments = arguments,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true
+        };
+
+        using Process process = new Process();
+        process.StartInfo = startInfo;
+        process.Start();
+        process.WaitForExit();
+
+        if (process.ExitCode != 0)
+        {
+            string error = process.StandardError.ReadToEnd();
+            Debug.LogError($"TexturePacker执行失败: {error}");
+            return;
+        }
+        Debug.Log("===== Pack End =====");
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+        
+        File.Delete(targetImagePath.Replace(".png", "") + "-polygon.tpsheet");
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
     }

@@ -1,0 +1,6 @@
+1、双击TexturePacker-7.0.3.msi安装
+2、解压激活补丁，双击TexturePacker_7-0-3_Activation.exe，一直选接受或者下一步，到输入密码的地方输入countryboy
+然后到选择安装路径的地方，默认是C:\Program Files\CodeAndWeb\TexturePacker。选择你安装TexturePacker-7.0.3.msi的路径就行。
+然后一直点下一步，完成
+
+使用教程：https://www.bilibili.com/video/BV1kW4y177hg/

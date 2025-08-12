@@ -15,7 +15,7 @@ public class CreateTpAtlas
         _packName = packName;
     }
 
-    public void Create(bool isPolygon)
+    public void Create()
     {
         var tpAtlasPath = $"{SAVE_PATH}/{_packName}.asset";
         var hasSo = File.Exists(tpAtlasPath);
@@ -25,16 +25,15 @@ public class CreateTpAtlas
         else
             so = ScriptableObject.CreateInstance<TpSpriteAtlas>();
         so.Clear();
-        so.IsPolygon = isPolygon;
 
         // 假设最大一共999个图集
         for (int i = 0; i < 999; i++)
         {
             var texturePath = $"{_saveTexturePath}/{_packName}-{i}.png";
-            var sprite = AssetDatabase.LoadAllAssetsAtPath(texturePath);
-            if (sprite == null || sprite.Length <= 0)
+            var sprites = AssetDatabase.LoadAllAssetsAtPath(texturePath);
+            if (sprites == null || sprites.Length <= 0)
                 break;
-            so.AddSprites(sprite, i == 0);
+            so.AddSprites(sprites, i == 0);
         }
 
         if (!hasSo)
