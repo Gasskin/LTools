@@ -57,8 +57,8 @@ public class PParticleRendererModule : BaseParticleModule
     [SerializeField]
     private Vector3 _pivot;
 
-    [SerializeField]
-    private bool _visiblePivot;
+    // [SerializeField]
+    // private bool _visiblePivot;
 
     [SerializeField]
     private List<ParticleSystemVertexStream> _particleSystemVertexStreams;
@@ -72,11 +72,11 @@ public class PParticleRendererModule : BaseParticleModule
     [SerializeField]
     private MotionVectorGenerationMode _motionVectorGenerationMode;
 
-    [SerializeField]
-    private bool _applyActiveColorSpace;
+    // [SerializeField]
+    // private bool _applyActiveColorSpace;
 
-    [SerializeField]
-    private bool _customVertexStreams;
+    // [SerializeField]
+    // private bool _customVertexStreams;
 
     [SerializeField]
     private int _sortLayerId;
@@ -94,7 +94,7 @@ public class PParticleRendererModule : BaseParticleModule
     private Mesh _mesh;
 
     // [SerializeField]
-    // private ParticleSystemRenderer.ScaleMode _scaleMode;
+    // private ScaleMode _scaleMode;
 
     [SerializeField]
     private int _activeVertexStreamsCount;

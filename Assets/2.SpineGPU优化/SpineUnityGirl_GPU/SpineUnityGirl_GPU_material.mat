@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SpineUnityGirl_GPU_material
-  m_Shader: {fileID: 4800000, guid: 070433829b2d4da0917b76f3acc2a952, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1f0f090497c84072bfbc22013d70b9ca, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,13 +28,24 @@ Material:
         m_Texture: {fileID: 2800000, guid: c9eaad317f2012a47818899264049ac9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _AnimationTex:
+        m_Texture: {fileID: 2800000, guid: c9eaad317f2012a47818899264049ac9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 255f15b5e80bc4a45924795c8144c409, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AnimationTexHeight: 0
+    - _AnimationTexWidth: 0
     - _Cutoff: 0.1
+    - _FrameIndex: 0
+    - _MaxX: 1
+    - _MaxY: 1
+    - _MinX: -1
+    - _MinY: -1
     - _OutlineMipLevel: 0
     - _OutlineOpaqueAlpha: 1
     - _OutlineReferenceTexWidth: 1024
