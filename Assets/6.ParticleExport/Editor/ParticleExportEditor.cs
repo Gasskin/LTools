@@ -7,9 +7,9 @@ using UnityEngine;
 public partial class ParticleExportEditor
 {
     private const string SAVE_PATH = "Assets/6.ParticleExport/Exports";
-    
+
     private GameObject _source;
-    
+
     public ParticleExportEditor(GameObject source)
     {
         _source = source;
@@ -18,10 +18,10 @@ public partial class ParticleExportEditor
     public void Export()
     {
         var newPrefab = Object.Instantiate(_source);
-        
+
         var particles = newPrefab.GetComponentsInChildren<ParticleSystem>(true);
-        
-        
+
+
         // 不导出的particle
         var filter = new HashSet<ParticleSystem>();
 
@@ -32,7 +32,7 @@ public partial class ParticleExportEditor
         //     foreach (var particleSystem in particle.particles)
         //         filter.Add(particleSystem);
         // }
-        
+
         // 如果一个particle开启了sub emitters，他的子粒子不导出
         foreach (var particle in particles)
         {
@@ -46,25 +46,37 @@ public partial class ParticleExportEditor
                 filter.Add(particle);
             }
         }
-        
+
         // 需要K动画的粒子，不导出
         CheckHasAnimation(newPrefab, filter);
-
-
+        
+        // 删除旧数据
         var saveFolder = $"{SAVE_PATH}/{_source.name}";
         if (Directory.Exists(saveFolder))
             Directory.Delete(saveFolder, true);
+        Directory.CreateDirectory($"{saveFolder}/Data");
 
         for (int i = 0; i < particles.Length; i++)
         {
             var particle = particles[i];
             if (filter.Contains(particle))
                 continue;
-            var oneParticleData = new GameObject($"{i}_{particle.gameObject.name}_data");
+            // var oneParticleData = new GameObject($"{i}_{particle.gameObject.name}_data");
+            AddOneModuleAndRecord<PMainModule>(particle);
+            if (particle.emission.enabled)
+            {
+                AddOneModuleAndRecord<PEmissionModule>(particle);
+            }
+            if (particle.shape.enabled)
+            {
+                AddOneModuleAndRecord<PShapeModule>(particle);
+            }
             
+            Object.DestroyImmediate(particle.GetComponent<ParticleSystemRenderer>());
+            Object.DestroyImmediate(particle.GetComponent<ParticleSystem>());
         }
     }
-    
+
     private void CheckHasAnimation(GameObject target, HashSet<ParticleSystem> filter)
     {
         var animators = target.GetComponentsInChildren<UnityEngine.Animator>(true);
@@ -104,5 +116,12 @@ public partial class ParticleExportEditor
                 }
             }
         }
+    }
+
+
+    private void AddOneModuleAndRecord<T>(ParticleSystem particle) where T : BaseParticleModule
+    {
+        var module = particle.gameObject.AddComponent<T>();
+        module.RecordModule(particle);
     }
 }
