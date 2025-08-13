@@ -35,9 +35,9 @@ public class CreateTpAtlas
                 break;
             so.AddSprites(sprites, i == 0);
         }
-
         if (!hasSo)
             AssetDatabase.CreateAsset(so, tpAtlasPath);
+        EditorUtility.SetDirty(so);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
