@@ -59,7 +59,9 @@ namespace TexturePackerImporter
                 {
                     var rect = rects[i];
                     var id = ids[i];
-                    var artSpritePath = $"{artPath}/{id.name}.png";
+                    // 不同版本打包这里的名字好像不太一样
+                    var artName = id.name.Replace($"{atlasName}-", "");
+                    var artSpritePath = $"{artPath}/{artName}.png";
                     var artSprite = AssetDatabase.LoadAssetAtPath<Sprite>(artSpritePath);
                     if (artSprite != null)
                     {

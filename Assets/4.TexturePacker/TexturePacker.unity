@@ -352,7 +352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 871060610, guid: 89e479a1034ec6641859be2797a2ec87, type: 3}
+  m_Sprite: {fileID: 224662958, guid: 89e479a1034ec6641859be2797a2ec87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -370,13 +370,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754631725}
   m_CullTransparentMesh: 1
---- !u!213 &1140077814
+--- !u!213 &759141118
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jian01(Clone)
+  m_Name: Icon-jian01(Clone)
   m_Rect:
     serializedVersion: 2
     x: 0
@@ -392,7 +392,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    45062ac4119389246acd6bf97daa86e0: -6669283
+    45062ac4119389246acd6bf97daa86e0: -248676270
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -600,7 +600,7 @@ Sprite:
     - {x: 0.55, y: -0.38}
   m_Bones: []
   m_ScriptableObjects: []
-  m_SpriteID: 8b8ed781d6b54874fbfa8cd6b2bf03c1
+  m_SpriteID: 4b9dcbc9c81d1304c85b78f466e78068
 --- !u!1 &1536972673
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1140077814}
+  m_Sprite: {fileID: 759141118}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
   _atlas: {fileID: 11400000, guid: 618ddf46c3f98d54e90364a8263eabfa, type: 2}
-  _spriteName: jian01
+  _spriteName: Icon-jian01
 --- !u!222 &1544401012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 643127021, guid: 575ccf23886fd7545b8c38c788ca2cb0, type: 3}
+  m_Sprite: {fileID: 1456318622, guid: 575ccf23886fd7545b8c38c788ca2cb0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

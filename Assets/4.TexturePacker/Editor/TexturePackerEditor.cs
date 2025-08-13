@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class TexturePackerEditor
 {
-    public const string ART_ATLAS_PATH = "Assets/4.TexturePacker/Art/TpAtlas";
+    public const string ART_ATLAS_PATH = "Assets/4.TexturePacker/Art/Atlas";
 
     [MenuItem("Assets/LTools/Texture Packer/PackFolder-无裁切")]
     public static void PackFolderNone()
