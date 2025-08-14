@@ -44,7 +44,8 @@ public partial class ParticleExportEditor
                     var p = particle.subEmitters.GetSubEmitterSystem(i);
                     filter.Add(p);
                 }
-                filter.Add(particle);
+                // 父粒子依旧导出，子粒子不导出
+                // filter.Add(particle);
             }
         }
 
@@ -67,6 +68,8 @@ public partial class ParticleExportEditor
             AddOneModuleAndRecord<PParticleRendererModule>(particle);
             if (particle.emission.enabled)
                 AddOneModuleAndRecord<PEmissionModule>(particle);
+            if (particle.subEmitters.enabled)
+                AddOneModuleAndRecord<PSubEmittersModule>(particle);
             if (particle.shape.enabled)
                 AddOneModuleAndRecord<PShapeModule>(particle);
             if (particle.velocityOverLifetime.enabled)
@@ -105,6 +108,8 @@ public partial class ParticleExportEditor
                 AddOneModuleAndRecord<PLightsModule>(particle);
             if (particle.trails.enabled)
                 AddOneModuleAndRecord<PTrailModule>(particle);
+            if (particle.customData.enabled)
+                AddOneModuleAndRecord<PCustomModule>(particle);
             Object.DestroyImmediate(particle.GetComponent<ParticleSystemRenderer>());
             Object.DestroyImmediate(particle.GetComponent<ParticleSystem>());
         }
@@ -112,6 +117,8 @@ public partial class ParticleExportEditor
         PrefabUtility.SaveAsPrefabAsset(newPrefab, prefabPath);
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
+
+        Object.DestroyImmediate(newPrefab);
     }
 
     private void CheckHasAnimation(GameObject target, HashSet<ParticleSystem> filter)
@@ -158,6 +165,11 @@ public partial class ParticleExportEditor
 
     private void AddOneModuleAndRecord<T>(ParticleSystem particle) where T : BaseParticleModule
     {
+        if (particle.GetComponent<T>() != null) 
+        {
+            Debug.LogError($"添加重复Particle模块：{typeof(T).Name}");
+            return;
+        }
         var module = particle.gameObject.AddComponent<T>();
         module.RecordModule(particle);
     }
