@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IEnhancedScrollerCellLogic
 {
-    public void Init(EnhancedScrollerUIElement ownerScroller, GameObject owner);
+    public void Init(EnhancedScrollerWidget ownerScroller, GameObject owner);
     public void Show(BaseEnhancedScrollerData data, int dataIndex);
     public void Refresh();
     public void Hide();
@@ -11,12 +11,12 @@ public interface IEnhancedScrollerCellLogic
 
 public abstract class BaseEnhancedScrollerCellLogic<T> : IEnhancedScrollerCellLogic where T : BaseEnhancedScrollerData
 {
-    protected EnhancedScrollerUIElement OwnerScroller;
+    protected EnhancedScrollerWidget OwnerScroller;
     protected T Data;
     protected int DataIndex;
     protected GameObject Owner;
 
-    public void Init(EnhancedScrollerUIElement ownerScroller, GameObject owner)
+    public void Init(EnhancedScrollerWidget ownerScroller, GameObject owner)
     {
         OwnerScroller = ownerScroller;
         Owner = owner;

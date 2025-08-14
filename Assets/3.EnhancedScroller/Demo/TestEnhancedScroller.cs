@@ -43,7 +43,7 @@ public class TestEnhancedScroller : MonoBehaviour
             _data.Add(new TestEnhancedScrollerData() { Index = i });
         }
 
-        var s = new EnhancedScrollerUIElement(gameObject, 
+        var s = new EnhancedScrollerWidget(gameObject, 
             CreateCellLogicDelegate,
             GetNumberOfCellsDelegate,
             GetCellSizeDelegate, 

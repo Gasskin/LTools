@@ -30,7 +30,7 @@ public delegate int GetCellAssetIndexDelegate(int dataIndex);
 public delegate BaseEnhancedScrollerData GetCellDataDelegate(int dataIndex);
 
 
-public class EnhancedScrollerUIElement : IEnhancedScrollerDelegate
+public class EnhancedScrollerWidget : IEnhancedScrollerDelegate
 {
     private GameObject _owner;
     private EnhancedScroller _scroller;
@@ -47,7 +47,7 @@ public class EnhancedScrollerUIElement : IEnhancedScrollerDelegate
     // 激活中的CellLogic
     private readonly Dictionary<int, IEnhancedScrollerCellLogic> _activeCellLogic = new();
     
-    public EnhancedScrollerUIElement(GameObject owner,
+    public EnhancedScrollerWidget(GameObject owner,
         CreateCellLogicDelegate createCellLogic,
         GetNumberOfCellsDelegate getNumberOfCells,
         GetCellSizeDelegate getCellSize,
