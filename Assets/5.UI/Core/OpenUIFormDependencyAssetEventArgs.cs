@@ -7,7 +7,7 @@
 
 using System;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 打开界面时加载依赖资源事件。

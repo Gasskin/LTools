@@ -5,12 +5,12 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
-using GameFramework.UI;
+using LTools.UI;
 using System;
 using Cysharp.Text;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     /// <summary>
     /// 界面。

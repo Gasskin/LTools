@@ -5,11 +5,11 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
-using GameFramework.UI;
+using LTools.UI;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     /// <summary>
     /// 默认界面辅助器。

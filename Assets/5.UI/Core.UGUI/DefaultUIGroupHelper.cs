@@ -5,7 +5,7 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     /// <summary>
     /// 默认界面组辅助器。

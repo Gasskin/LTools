@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Text;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 界面管理器。

@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Text;
 
-namespace GameFramework
+namespace LTools
 {
     /// <summary>
     /// 引用池。

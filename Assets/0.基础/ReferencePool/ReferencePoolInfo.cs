@@ -8,7 +8,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace LTools
 {
     /// <summary>
     /// 引用池信息。

@@ -7,7 +7,7 @@
 
 using System;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 打开界面失败事件。

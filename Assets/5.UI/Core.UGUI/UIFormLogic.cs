@@ -5,16 +5,19 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
+using System.Collections.Generic;
 using Cysharp.Text;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     /// <summary>
     /// 界面逻辑基类。
     /// </summary>
     public abstract class UIFormLogic : MonoBehaviour
     {
+        private static readonly List<Transform> _cachedTransforms = new List<Transform>();
+
         private bool _available = false;
         private bool _visible = false;
         private UIForm _uiForm = null;
@@ -108,7 +111,8 @@ namespace UnityGameFramework.Runtime
         /// <param name="userData">用户自定义数据。</param>
         protected internal virtual void OnClose(bool isShutdown, object userData)
         {
-            gameObject.SetLayerRecursively(_originalLayer);
+            // gameObject.SetLayerRecursively(_originalLayer);
+            SetLayerRecursively();
             Visible = false;
             _available = false;
         }
@@ -176,6 +180,16 @@ namespace UnityGameFramework.Runtime
         protected virtual void InternalSetVisible(bool visible)
         {
             gameObject.SetActive(visible);
+        }
+
+        private void SetLayerRecursively()
+        {
+            gameObject.GetComponentsInChildren(true, _cachedTransforms);
+            for (int i = 0; i < _cachedTransforms.Count; i++)
+            {
+                _cachedTransforms[i].gameObject.layer = _originalLayer;
+            }
+            _cachedTransforms.Clear();
         }
     }
 }

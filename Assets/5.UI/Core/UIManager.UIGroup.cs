@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using Cysharp.Text;
 using UnityEditor.Playables;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     internal sealed partial class UIManager 
     {

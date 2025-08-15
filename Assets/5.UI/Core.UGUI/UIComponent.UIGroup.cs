@@ -8,7 +8,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     public sealed partial class UIComponent 
     {

@@ -1,7 +1,7 @@
 using System;
 using CodeBind;
-using GameFramework;
-using UnityGameFramework.Runtime;
+using LTools;
+using LTools.UI;
 
 public partial class TestTipForm : AUGuiForm
 {

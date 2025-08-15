@@ -1,6 +1,6 @@
 using System;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     public interface IUIResourceLoader
     {

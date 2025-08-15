@@ -7,7 +7,7 @@
 
 using System;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 关闭界面完成事件。

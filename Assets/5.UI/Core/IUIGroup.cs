@@ -7,7 +7,7 @@
 
 using System.Collections.Generic;
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 界面组接口。

@@ -6,12 +6,12 @@
 //------------------------------------------------------------
 
 using System;
-using GameFramework.UI;
+using LTools.UI;
 using System.Collections.Generic;
 using Cysharp.Text;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace LTools.UI
 {
     /// <summary>
     /// 界面组件。

@@ -5,7 +5,7 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
-namespace GameFramework.UI
+namespace LTools.UI
 {
     /// <summary>
     /// 界面组辅助器接口。
