@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9046033558995793203}
   - component: {fileID: 5517861918962579316}
-  - component: {fileID: 2156221699720778709}
   - component: {fileID: 2355560294529122151}
   m_Layer: 5
   m_Name: TestLoginForm
@@ -47,28 +46,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250006577784946511}
   m_CullTransparentMesh: 1
---- !u!114 &2156221699720778709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250006577784946511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5452a0c3619826c4f889a047605eef79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindComponents:
-  - {fileID: 6124586547446523744}
-  - {fileID: 7898364515590973947}
-  - {fileID: 7527221068134250816}
-  m_SeparatorChar: 95
-  m_BindScript: {fileID: 11500000, guid: 5b83ba1e9af0414b9769bc33f87becd1, type: 3}
-  m_BindComponentNames:
-  - ConfirmBtn
-  - TipTMPText
-  - TitleTMPText
 --- !u!114 &2355560294529122151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b83ba1e9af0414b9769bc33f87becd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ConfirmBtn: {fileID: 6124586547446523744}
+  m_TipTMPText: {fileID: 7898364515590973947}
+  m_TitleTMPText: {fileID: 7527221068134250816}
 --- !u!1 &1432287898523449834
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,12 +3,12 @@ using CodeBind;
 using UnityEngine;
 using LTools.UI;
 
+[MonoCodeBind]
 public partial class TestLoginForm : AUGuiForm
 {
     protected internal override void OnOpen(object userData)
     {
         base.OnOpen(userData);
-        InitBind(GetComponent<CSCodeBindMono>());
         
         ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
     }
