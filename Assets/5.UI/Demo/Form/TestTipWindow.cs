@@ -4,7 +4,7 @@ using LTools;
 using LTools.UI;
 
 [MonoCodeBind]
-public partial class TestTipForm : AUGuiForm
+public partial class TestTipWindow : BaseWindow
 {
     public class TestTipFormOpenData
     {
@@ -17,7 +17,6 @@ public partial class TestTipForm : AUGuiForm
     protected internal override void OnOpen(object userData)
     {
         base.OnOpen(userData);
-    
         _openData = (TestTipFormOpenData)userData;
         if (_openData != null) 
             TipTMPText.text = _openData.TipShow;

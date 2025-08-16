@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CodeBind;
+using LTools.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,9 @@ public class CodeBindName2TypeConfig
         // Unity
         { "Rect", typeof(RectTransform) },
         { "Btn", typeof(Button) },
+        { "Img", typeof(Image) },
         // UI
-        // { "UIElement", typeof(AUIElement) },
+        { "Widget", typeof(BaseWidget) },
         // TMP
         { "TMPText", typeof(TMPro.TMP_Text) },
         { "TMPInputField", typeof(TMPro.TMP_InputField) },

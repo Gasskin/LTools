@@ -134,7 +134,7 @@ namespace LTools.UI
 
             Instance = this;
 
-            OpenUIForm("Assets\\5.UI\\Demo\\TestLoginForm.prefab", "Default", true);
+            OpenUIForm("Assets\\5.UI\\Demo\\TestLoginWindow.prefab", "Default", true);
         }
 
 
