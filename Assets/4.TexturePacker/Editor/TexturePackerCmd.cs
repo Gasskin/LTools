@@ -35,11 +35,12 @@ public class TexturePackerCmd
         var files = Directory.GetFiles(savePath);
         foreach (var file in files)
         {
-            if (file.Contains(PackName))
+            if (file.Contains(PackName) && (file.Contains(".png")|| file.Contains(".tpsheet")))
+            {
+                Debug.Log($"Delete：{file}");
                 File.Delete(file);
+            }
         }
-
-        Debug.Log("===== Pack Start =====");
         Debug.Log($"TargetFolderPath: {savePath}");
         Debug.Log($"PackName: {PackName}");
         var arguments = $"\"{savePath}\"";
@@ -66,15 +67,15 @@ public class TexturePackerCmd
             //     arguments += " --trim-mode Polygon";
             //     break;
         }
-        arguments += " --max-width 2048";
-        arguments += " --max-height 2048";
+        arguments += " --max-width 256";
+        arguments += " --max-height 256";
         arguments += " --shape-padding 2";
         arguments += " --border-padding 0";
         arguments += " --extrude 0";
         arguments += " --size-constraints AnySize";
         arguments += " --multipack";
 
-        Debug.Log(arguments);
+        Debug.Log($"Cmd: {arguments}");
 
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
@@ -97,7 +98,6 @@ public class TexturePackerCmd
             Debug.LogError($"TexturePacker执行失败: {error}");
             return;
         }
-        Debug.Log("===== Pack End =====");
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
     }

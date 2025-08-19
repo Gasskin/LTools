@@ -12,7 +12,11 @@ public class TexturePackerEditor
     [MenuItem("Assets/LTools/Texture Packer/PackFolder-无裁切")]
     public static void PackFolderNone()
     {
+        if (Selection.activeObject == null)
+            return;
         var path = AssetDatabase.GetAssetPath(Selection.activeObject);
+        if (!AssetDatabase.IsValidFolder(path) || !path.Contains(ART_ATLAS_PATH))
+            return;
         var cmd = new TexturePackerCmd();
         cmd.PackFolder(path, ART_ATLAS_PATH, TexturePackerCmd.AlgorithmType.None);
         new CreateTpAtlas(ART_ATLAS_PATH, cmd.PackName).Create();
@@ -21,7 +25,11 @@ public class TexturePackerEditor
     [MenuItem("Assets/LTools/Texture Packer/PackFolder-矩形裁切丢弃位置")]
     public static void PackFolderRectDisPos()
     {
+        if (Selection.activeObject == null)
+            return;
         var path = AssetDatabase.GetAssetPath(Selection.activeObject);
+        if (!AssetDatabase.IsValidFolder(path) || !path.Contains(ART_ATLAS_PATH))
+            return;
         var cmd = new TexturePackerCmd();
         cmd.PackFolder(path, ART_ATLAS_PATH, TexturePackerCmd.AlgorithmType.RectTrimDisPos);
         new CreateTpAtlas(ART_ATLAS_PATH, cmd.PackName).Create();
@@ -30,20 +38,15 @@ public class TexturePackerEditor
     [MenuItem("Assets/LTools/Texture Packer/PackFolder-矩形裁切保留位置")]
     public static void PackFolderRectKeepPos()
     {
+        if (Selection.activeObject == null)
+            return;
         var path = AssetDatabase.GetAssetPath(Selection.activeObject);
+        if (!AssetDatabase.IsValidFolder(path) || !path.Contains(ART_ATLAS_PATH))
+            return;
         var cmd = new TexturePackerCmd();
         cmd.PackFolder(path, ART_ATLAS_PATH, TexturePackerCmd.AlgorithmType.RectTrimKeepPos);
         new CreateTpAtlas(ART_ATLAS_PATH, cmd.PackName).Create();
     }
-
-    // [MenuItem("Assets/LTools/Texture Packer/PackFolder-多边形裁切")]
-    // public static void PackFolderPolygon()
-    // {
-    // var path = AssetDatabase.GetAssetPath(Selection.activeObject);
-    // var cmd = new TexturePackerCmd(path, SAVE_PATH);
-    // cmd.PackByCmd(TexturePackerCmd.AlgorithmType.PolygonTrim);
-    // new CreateTpAtlas(SAVE_PATH, cmd.PackName).Create(true);
-    // }
 
     [MenuItem("Assets/LTools/Texture Packer/PackOneImagePolygonTrim")]
     public static void GenOutline()
@@ -54,4 +57,6 @@ public class TexturePackerEditor
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
     }
+    
+    
 }

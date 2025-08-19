@@ -7,13 +7,11 @@
 # $TexturePacker:SmartUpdate:3bd625ceb614e3a761baa06654fdcdb5:d716ab358cb859a12f462d46ffc8686d:79cdbe5be3d2dccd16a224510d509cf9$
 #
 :format=40300
-:texture=Icon-0.png
-:size=212x232
+:texture=Icon-1.png
+:size=84x188
 :pivotpoints=enabled
 :borders=disabled
 :alphahandling=ClearTransparentPixels
 
-Icon-jian01;0;114;110;118; 0.5045454545454545;0.5; 0;0;0;0
-Icon-jian02;106;6;106;106; 0.49056603773584906;0.5; 0;0;0;0
-Icon-jian03;0;3;104;109; 0.5;0.5; 0;0;0;0
-Icon-pei01;112;119;93;113; 0.45698924731182794;0.5088495575221239; 0;0;0;0
+Icon-pei02;0;96;84;92; 0.5;0.5; 0;0;0;0
+Icon-pei03;0;3;84;91; 0.5357142857142857;0.5164835164835164; 0;0;0;0

@@ -25,6 +25,12 @@ namespace TexturePackerImporter
 {
     public class SpritesheetImporter : AssetPostprocessor
     {
+        [InitializeOnLoadMethod]
+        static void CloseDeubg()
+        {
+            Dbg.enabled = false;
+        }
+
         void OnPreprocessTexture()
         {
             TextureImporter importer = assetImporter as TextureImporter;

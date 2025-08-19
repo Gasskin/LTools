@@ -12,17 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821e11ddf687401292d93dd236a250c6, type: 3}
   m_Name: Icon
   m_EditorClassIdentifier: 
-  _spriteNames:
-  - Icon-jian01
-  - Icon-jian02
-  - Icon-jian03
-  - Icon-pei01
-  - Icon-pei02
-  - Icon-pei03
-  _sprites:
-  - {fileID: -1642622115, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
-  - {fileID: 909233451, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
-  - {fileID: 1664392472, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
-  - {fileID: 2032966309, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
-  - {fileID: -1139020115, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
-  - {fileID: -1648083721, guid: 45062ac4119389246acd6bf97daa86e0, type: 3}
+  _spriteNames: []
+  _sprites: []
+  _textures:
+  - {fileID: 2800000, guid: ef494f2f1b050cc479b162a8da348a71, type: 3}
+  - {fileID: 2800000, guid: ccbca7e7c84cbfd48b7b6e6c5cd59290, type: 3}
