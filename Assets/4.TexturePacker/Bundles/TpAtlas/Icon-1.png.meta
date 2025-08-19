@@ -106,10 +106,10 @@ TextureImporter:
       name: Icon-1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 5
+        y: 3
         width: 84
-        height: 92
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Icon-1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
+        x: 103
+        y: 7
         width: 84
-        height: 91
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

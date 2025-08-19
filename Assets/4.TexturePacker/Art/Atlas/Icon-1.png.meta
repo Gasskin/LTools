@@ -100,10 +100,10 @@ TextureImporter:
       name: Icon-pei02
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 84
-        height: 92
+        x: 102
+        y: 6
+        width: 86
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baceeed520e8f2e429b45d93de46ea5f
-      internalID: 773670130
+      spriteID: 3f9b27937a8cfc64c925de55aa4be8b6
+      internalID: 2143417494
       vertices: []
       indices: 
       edges: []
@@ -123,19 +123,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 84
-        height: 91
-      alignment: 9
-      pivot: {x: 0.53571427, y: 0.51648355}
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 758645edf23645143a6e03acdbacede7
-      internalID: 96028246
+      spriteID: c1c720f21b3ecb447b2b85124bb48cd5
+      internalID: 1404376578
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5d7d3628cdc91a145a217ab7f44383d5
+    spriteID: 7828f0c8a9ed80a4a95d74e87704443e
     internalID: 0
     vertices: []
     indices: 
@@ -154,8 +154,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon-pei02: 773670130
-      Icon-pei03: 96028246
+      Icon-pei02: 2143417494
+      Icon-pei03: 1404376578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

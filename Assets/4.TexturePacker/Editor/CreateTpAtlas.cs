@@ -1,6 +1,7 @@
 using System.IO;
 using TexturePackerImporter;
 using UnityEditor;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
 public class CreateTpAtlas
@@ -61,12 +62,18 @@ public class CreateTpAtlas
         // 假设最大一共999个图集
         for (int i = 0; i < 999; i++)
         {
-            var sourceTexturePath = $"{_saveTexturePath}/{_packName}-{i}.png";
-            // var sprites = AssetDatabase.LoadAllAssetsAtPath(sourceTexturePath);
-            // if (sprites == null || sprites.Length <= 0)
-                // break;
-            // so.AddSprites(sprites, i == 0);
-            so.AddTexture(AssetDatabase.LoadAssetAtPath<Texture>($"{SAVE_PATH}/{_packName}-{i}.png"));
+            var sheetPath = $"{_saveTexturePath}/{_packName}-{i}.tpsheet";
+            if (!File.Exists(sheetPath))
+                break;
+            var s = new SpritesheetCollection();
+            s.loadSheetData(sheetPath);
+            var sheetInfo = s.sheetInfoForDataFile(sheetPath);
+            if (sheetInfo != null)
+            {
+                foreach (var m in sheetInfo.metadata)
+                    so.AddSprite(m, Vector4.zero, i);
+            }
+            so.AddTexture(AssetDatabase.LoadAssetAtPath<Texture2D>($"{SAVE_PATH}/{_packName}-{i}.png"));
         }
         so.DoSerialize();
         if (!hasSo)
@@ -74,11 +81,5 @@ public class CreateTpAtlas
         EditorUtility.SetDirty(so);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-    }
-
-    private void AddSprites(TpSpriteAtlas so, string sourceTexturePath)
-    {
-        var importer = (TextureImporter)AssetImporter.GetAtPath(sourceTexturePath);
-        var sheet = TexturePackerImporter.TexturePackerImporter.getSheetInfo(importer);
     }
 }

@@ -100,20 +100,20 @@ TextureImporter:
       name: Icon-jian01
       rect:
         serializedVersion: 2
-        x: 0
-        y: 114
-        width: 110
-        height: 118
-      alignment: 9
-      pivot: {x: 0.50454545, y: 0.5}
-      border: {x: 31, y: 0, z: 34, w: 0}
+        x: 117
+        y: 112
+        width: 113
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c68b67b2a0e07d4c861295e0bad4d9e
-      internalID: 1804949375
+      spriteID: d9e93e1915f07504e96e4c76d4211a8e
+      internalID: -1116378925
       vertices: []
       indices: 
       edges: []
@@ -122,20 +122,20 @@ TextureImporter:
       name: Icon-jian02
       rect:
         serializedVersion: 2
-        x: 106
-        y: 6
-        width: 106
-        height: 106
-      alignment: 9
-      pivot: {x: 0.49056605, y: 0.5}
+        x: 108
+        y: 2
+        width: 110
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec2d11670cefae478fc765649ae17b2
-      internalID: 750368972
+      spriteID: 67226cd89218d0d4faf51d10d97f13a5
+      internalID: -668928151
       vertices: []
       indices: 
       edges: []
@@ -145,9 +145,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 104
-        height: 109
+        y: 4
+        width: 106
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86aa58c6cbd85d6489ee652ef8b09066
-      internalID: -982841533
+      spriteID: 469a9ef51d1e5e64a8cc77df78118b28
+      internalID: 1560427144
       vertices: []
       indices: 
       edges: []
@@ -166,20 +166,20 @@ TextureImporter:
       name: Icon-pei01
       rect:
         serializedVersion: 2
-        x: 112
-        y: 119
-        width: 93
-        height: 113
-      alignment: 9
-      pivot: {x: 0.45698926, y: 0.50884956}
+        x: 0
+        y: 117
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5e29eb5e5ed68f4e830b3d4d52351ae
-      internalID: -452165702
+      spriteID: 266534228257b6647825e0f7fa85a85d
+      internalID: 1043081318
       vertices: []
       indices: 
       edges: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4065a40a204485441a7e1a63731bba57
+    spriteID: 3851b601275e9754f9c2e8abef867150
     internalID: 0
     vertices: []
     indices: 
@@ -198,10 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon-jian01: 1804949375
-      Icon-jian02: 750368972
-      Icon-jian03: -982841533
-      Icon-pei01: -452165702
+      Icon-jian01: -1116378925
+      Icon-jian02: -668928151
+      Icon-jian03: 1560427144
+      Icon-pei01: 1043081318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

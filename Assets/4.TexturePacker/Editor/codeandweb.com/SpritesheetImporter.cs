@@ -57,28 +57,28 @@ namespace TexturePackerImporter
             SpriteNameFileIdPair[] ids = generateSpriteIds(oldIds, rects);
 
             //
-            if (!importer.assetPath.Contains("Image"))
-            {
-                var atlasName = Path.GetFileNameWithoutExtension(importer.assetPath).Split("-")[0];
-                var artPath = $"{TexturePackerEditor.ART_ATLAS_PATH}/{atlasName}";
-                for (int i = 0; i < rects.Length; i++)
-                {
-                    var rect = rects[i];
-                    var id = ids[i];
-                    // 不同版本打包这里的名字好像不太一样
-                    var artName = id.name.Replace($"{atlasName}-", "");
-                    var artSpritePath = $"{artPath}/{artName}.png";
-                    var artSprite = AssetDatabase.LoadAssetAtPath<Sprite>(artSpritePath);
-                    if (artSprite != null)
-                    {
-                        rect.border = artSprite.border;
-                    }
-                    else
-                    {
-                        Debug.LogError($"Art目录不存在：{artSpritePath}");
-                    }
-                }
-            }
+            // if (!importer.assetPath.Contains("Image"))
+            // {
+            //     var atlasName = Path.GetFileNameWithoutExtension(importer.assetPath).Split("-")[0];
+            //     var artPath = $"{TexturePackerEditor.ART_ATLAS_PATH}/{atlasName}";
+            //     for (int i = 0; i < rects.Length; i++)
+            //     {
+            //         var rect = rects[i];
+            //         var id = ids[i];
+            //         // 不同版本打包这里的名字好像不太一样
+            //         var artName = id.name.Replace($"{atlasName}-", "");
+            //         var artSpritePath = $"{artPath}/{artName}.png";
+            //         var artSprite = AssetDatabase.LoadAssetAtPath<Sprite>(artSpritePath);
+            //         if (artSprite != null)
+            //         {
+            //             rect.border = artSprite.border;
+            //         }
+            //         else
+            //         {
+            //             Debug.LogError($"Art目录不存在：{artSpritePath}");
+            //         }
+            //     }
+            // }
 
             dataProvider.SetSpriteRects(rects);
             spriteNameFileIdDataProvider.SetNameFileIdPairs(ids);

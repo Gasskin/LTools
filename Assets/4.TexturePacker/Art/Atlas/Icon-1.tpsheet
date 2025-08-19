@@ -4,14 +4,14 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:3bd625ceb614e3a761baa06654fdcdb5:d716ab358cb859a12f462d46ffc8686d:79cdbe5be3d2dccd16a224510d509cf9$
+# $TexturePacker:SmartUpdate:ccc3874c84485d30afa066a5ee42ee9a:d716ab358cb859a12f462d46ffc8686d:79cdbe5be3d2dccd16a224510d509cf9$
 #
 :format=40300
 :texture=Icon-1.png
-:size=84x188
+:size=188x100
 :pivotpoints=enabled
 :borders=disabled
 :alphahandling=ClearTransparentPixels
 
-Icon-pei02;0;96;84;92; 0.5;0.5; 0;0;0;0
-Icon-pei03;0;3;84;91; 0.5357142857142857;0.5164835164835164; 0;0;0;0
+Icon-pei02;102;6;86;94; 0.5;0.5; 0;0;0;0
+Icon-pei03;0;0;100;100; 0.5;0.5; 0;0;0;0
