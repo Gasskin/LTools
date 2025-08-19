@@ -21,13 +21,13 @@ public class TpSprite : Image
         UpdateSprite();
     }
 
-    public void UpdateSprite()
+    public void UpdateSprite(bool forceRefresh = false)
     {
         sprite = null;
         if (!enabled)
             return;
         if (_atlas == null || string.IsNullOrEmpty(_spriteName))
             return;
-        sprite = _atlas.GetSprite(_spriteName);
+        sprite = _atlas.GetSprite(_spriteName, forceRefresh);
     }
 }

@@ -25,6 +25,7 @@ public class CreateTpAtlas
 
     private void CopyTexture()
     {
+        Debug.Log("★★CopyTexture★★");
         // 假设最大一共999个图集
         for (int i = 0; i < 999; i++)
         {
@@ -36,12 +37,15 @@ public class CreateTpAtlas
                 {
                     File.Delete(copyPath);
                     File.Delete($"{copyPath}.meta");
+                    Debug.Log($"Delete: {copyPath}");
+                    Debug.Log($"Delete: {copyPath}.meta");
                 }
                 File.Copy(texturePath, copyPath, true);
                 AssetDatabase.ImportAsset(copyPath);
                 var import = (TextureImporter)AssetImporter.GetAtPath(copyPath);
                 import.textureType = TextureImporterType.Default;
                 import.isReadable = true;
+                import.mipmapEnabled = false;
                 import.alphaIsTransparency = true;
                 import.SaveAndReimport();
             }
@@ -50,6 +54,7 @@ public class CreateTpAtlas
 
     private void CreateAtlas()
     {
+        Debug.Log("★★CreateAtlas★★");
         var tpAtlasPath = $"{SAVE_PATH}/{_packName}.asset";
         var hasSo = File.Exists(tpAtlasPath);
         TpSpriteAtlas so;
@@ -71,7 +76,7 @@ public class CreateTpAtlas
             if (sheetInfo != null)
             {
                 foreach (var m in sheetInfo.metadata)
-                    so.AddSprite(m, Vector4.zero, i);
+                    so.AddSprite(m, GetBorder(m), i);
             }
             so.AddTexture(AssetDatabase.LoadAssetAtPath<Texture2D>($"{SAVE_PATH}/{_packName}-{i}.png"));
         }
@@ -79,7 +84,24 @@ public class CreateTpAtlas
         if (!hasSo)
             AssetDatabase.CreateAsset(so, tpAtlasPath);
         EditorUtility.SetDirty(so);
+        AssetDatabase.SaveAssetIfDirty(so);
+        
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+    }
+
+    private Vector4 GetBorder(SpriteMetaData meta)
+    {
+        var artSpriteName = meta.name;
+        if (artSpriteName.Contains("-"))
+            artSpriteName = artSpriteName.Split('-')[1];
+        var artSpritePath = $"{_saveTexturePath}/{_packName}/{artSpriteName}.png";
+        if (File.Exists(artSpritePath))
+        {
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(artSpritePath);
+            return sprite.border;
+        }
+        Debug.LogError($"不存在: {artSpritePath}");
+        return Vector4.zero;
     }
 }

@@ -31,7 +31,7 @@ public class TpSpriteEditor : ImageEditor
         if (EditorGUI.EndChangeCheck())
             ((TpSprite)serializedObject.targetObject).SetSprite(_spriteName.stringValue);
 
-        if (GUILayout.Button("select sprite"))
+        if (GUILayout.Button("Select Sprite"))
         {
             var tpSprite = ((TpSprite)serializedObject.targetObject);
             if (_atlas.objectReferenceValue != null)
@@ -43,6 +43,12 @@ public class TpSpriteEditor : ImageEditor
                     tpSprite.SetNativeSize();
                 }));
             }
+        }
+
+        if (GUILayout.Button("Force Refresh"))
+        {
+            var tpSprite = ((TpSprite)serializedObject.targetObject);
+            tpSprite.UpdateSprite(true);
         }
 
         serializedObject.ApplyModifiedProperties();
@@ -71,7 +77,7 @@ public class TpSpriteEditor : ImageEditor
             _sprites.Clear();
             var names = tpAtlas.GetSpriteNames();
             foreach (var n in names)
-                _sprites.Add(tpAtlas.GetSprite(n));
+                _sprites.Add(tpAtlas.GetSprite(n, true));
         }
 
 

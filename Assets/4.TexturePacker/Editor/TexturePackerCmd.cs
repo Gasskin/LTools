@@ -104,7 +104,6 @@ public class TexturePackerCmd
 
     public void PackOneImagePolygonTrim(string targetImagePath)
     {
-        Debug.Log("===== Pack Start =====");
         Debug.Log($"TargetImage: {targetImagePath}");
         var arguments = $"\"{targetImagePath}\"";
         arguments += " --texture-format png";
@@ -144,7 +143,6 @@ public class TexturePackerCmd
             Debug.LogError($"TexturePacker执行失败: {error}");
             return;
         }
-        Debug.Log("===== Pack End =====");
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
         

@@ -27,17 +27,17 @@ public class TpSpriteAtlas : ScriptableObject
     private TpSpriteAtlasProto _tempProto;
 #endif
 
-    public Sprite GetSprite(string spriteName)
+    public Sprite GetSprite(string spriteName, bool forceRefresh)
     {
         // 初始化
-        if (_tpSpriteAtlasProtoInfo == null)
+        if (_tpSpriteAtlasProtoInfo == null || forceRefresh)
         {
             if (_tpSpriteAtlasProto == null)
                 return null;
             using var ms = new MemoryStream(_tpSpriteAtlasProto);
             _tpSpriteAtlasProtoInfo = Serializer.Deserialize<TpSpriteAtlasProto>(ms);
         }
-        if (_spriteInfoDic.Count <= 0 && _tpSpriteAtlasProtoInfo != null && _tpSpriteAtlasProtoInfo.SpriteInfos.Count > 0)
+        if (forceRefresh || (_spriteInfoDic.Count <= 0 && _tpSpriteAtlasProtoInfo != null && _tpSpriteAtlasProtoInfo.SpriteInfos.Count > 0))
         {
             _spriteInfoDic.Clear();
             foreach (var info in _tpSpriteAtlasProtoInfo.SpriteInfos)
@@ -45,6 +45,23 @@ public class TpSpriteAtlas : ScriptableObject
         }
         if (_tpSpriteAtlasProtoInfo == null)
             return null;
+        if (forceRefresh)
+        {
+            if (_spriteDic.TryGetValue(spriteName, out var exist))
+            {
+                if (Application.isPlaying)
+                {
+                    Destroy(exist);
+                }
+#if UNITY_EDITOR
+                else
+                {
+                    DestroyImmediate(exist);
+                }
+#endif
+                _spriteDic.Remove(spriteName);
+            }
+        }
         if (_spriteDic.TryGetValue(spriteName, out var sprite))
         {
             if (sprite != null)
