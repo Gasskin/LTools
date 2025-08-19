@@ -67,8 +67,8 @@ public class TexturePackerCmd
             //     arguments += " --trim-mode Polygon";
             //     break;
         }
-        arguments += " --max-width 256";
-        arguments += " --max-height 256";
+        arguments += " --max-width 2048";
+        arguments += " --max-height 2048";
         arguments += " --shape-padding 2";
         arguments += " --border-padding 0";
         arguments += " --extrude 0";

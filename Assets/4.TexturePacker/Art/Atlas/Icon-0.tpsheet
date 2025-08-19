@@ -4,16 +4,18 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:ccc3874c84485d30afa066a5ee42ee9a:d716ab358cb859a12f462d46ffc8686d:79cdbe5be3d2dccd16a224510d509cf9$
+# $TexturePacker:SmartUpdate:03ed295cb7a3c004eeedf693415764ff:d716ab358cb859a12f462d46ffc8686d:ac27fc38ced91c7848b872688f2b135c$
 #
 :format=40300
 :texture=Icon-0.png
-:size=232x232
+:size=212x320
 :pivotpoints=enabled
 :borders=disabled
 :alphahandling=ClearTransparentPixels
 
-Icon-jian01;117;112;113;120; 0.5;0.5; 0;0;0;0
-Icon-jian02;108;2;110;108; 0.5;0.5; 0;0;0;0
-Icon-jian03;0;4;106;111; 0.5;0.5; 0;0;0;0
-Icon-pei01;0;117;115;115; 0.5;0.5; 0;0;0;0
+Icon-jian01;0;202;110;118; 0.5;0.5; 0;0;0;0
+Icon-jian02;0;94;106;106; 0.5;0.5; 0;0;0;0
+Icon-jian03;108;2;104;109; 0.5;0.5; 0;0;0;0
+Icon-pei01;112;207;93;113; 0.5;0.5; 0;0;0;0
+Icon-pei02;112;113;84;92; 0.5;0.5; 0;0;0;0
+Icon-pei03;0;1;84;91; 0.5;0.5; 0;0;0;0

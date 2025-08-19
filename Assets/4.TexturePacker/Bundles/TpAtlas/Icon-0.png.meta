@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -8099978184454485456
     second: Icon-0_3
+  - first:
+      213: 701326540236947946
+    second: Icon-0_4
+  - first:
+      213: -7133216054478831068
+    second: Icon-0_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,12 +102,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -112,10 +118,10 @@ TextureImporter:
       name: Icon-0_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 117
-        width: 93
-        height: 113
+        x: 0
+        y: 202
+        width: 110
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +140,10 @@ TextureImporter:
       name: Icon-0_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 113
-        width: 110
-        height: 118
+        x: 112
+        y: 207
+        width: 93
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +162,10 @@ TextureImporter:
       name: Icon-0_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 5
-        width: 104
-        height: 109
+        x: 0
+        y: 94
+        width: 106
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +184,10 @@ TextureImporter:
       name: Icon-0_3
       rect:
         serializedVersion: 2
-        x: 111
-        y: 3
-        width: 106
-        height: 106
+        x: 112
+        y: 113
+        width: 84
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,6 +198,50 @@ TextureImporter:
       bones: []
       spriteID: 03a4d2bb1c8179f80800000000000000
       internalID: -8099978184454485456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-0_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 84
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae18066c5cc9bb900800000000000000
+      internalID: 701326540236947946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-0_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 2
+        width: 104
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4220da6bac9b10d90800000000000000
+      internalID: -7133216054478831068
       vertices: []
       indices: 
       edges: []
@@ -214,6 +264,8 @@ TextureImporter:
       Icon-0_1: 5845286591457600933
       Icon-0_2: 6223907151163724490
       Icon-0_3: -8099978184454485456
+      Icon-0_4: 701326540236947946
+      Icon-0_5: -7133216054478831068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
