@@ -9,8 +9,7 @@ public class TMPEditor
     public static void Gen()
     {
         var fontAsset = Selection.activeObject as TMP_FontAsset;
-        if (fontAsset == null) 
-            return;
+        if (fontAsset == null) return;
         var assetPath = AssetDatabase.GetAssetPath(fontAsset);
         var saveTexturePath = assetPath.Replace(".asset", ".png");
         var saveTexture = new Texture2D(fontAsset.atlasTexture.width, fontAsset.atlasTexture.height, TextureFormat.Alpha8, false);
@@ -19,33 +18,44 @@ public class TMPEditor
         if (File.Exists(saveTexturePath))
             File.Delete(saveTexturePath);
         File.WriteAllBytes(saveTexturePath, saveBytes);
-        
-        AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        
-        // 正式打包时这里应该剔除
-        // AssetDatabase.RemoveObjectFromAsset(fontAsset.atlasTexture);
-        // Object.DestroyImmediate(fontAsset.atlasTexture, true); 
         var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(saveTexturePath);
         fontAsset.atlasTextures[0] = atlas;
         fontAsset.material.mainTexture = atlas;
-        
-        // var importer = (TextureImporter)AssetImporter.GetAtPath(saveTexturePath);
-        // importer.isReadable = false;
-        // string[] platforms = { "iPhone", "Android", "Standalone" };
-        // int maxSize = 4096;
-        // foreach (string plat in platforms)
-        // {
-        //     var platSetting = new TextureImporterPlatformSettings();
-        //     platSetting.name = plat;
-        //     platSetting.maxTextureSize = maxSize;
-        //     platSetting.format = plat == "Standalone" ? TextureImporterFormat.BC7 : TextureImporterFormat.ASTC_5x5;
-        //     platSetting.overridden = true;
-        //     importer.SetPlatformTextureSettings(platSetting);
-        // }
-        // importer.SaveAndReimport();
-
+        AssetDatabase.RemoveObjectFromAsset(fontAsset.atlasTexture);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+        
+        SetCommon(saveTexturePath);
+        SetWindows(saveTexturePath);
+    }
+
+    private static void SetCommon(string texturePath)
+    {
+        var ti = (TextureImporter)AssetImporter.GetAtPath(texturePath);
+        ti.textureType = TextureImporterType.Default;
+        ti.sRGBTexture = false;
+        ti.alphaSource = TextureImporterAlphaSource.FromInput;
+        ti.alphaIsTransparency = false;
+        ti.mipmapEnabled = false;
+        ti.npotScale = TextureImporterNPOTScale.None;
+        ti.wrapMode = TextureWrapMode.Clamp;
+        ti.filterMode = FilterMode.Bilinear;
+        ti.SaveAndReimport();
+    }
+
+    private static void SetWindows(string texturePath)
+    {
+        var ti = (TextureImporter)AssetImporter.GetAtPath(texturePath);
+        var win = ti.GetPlatformTextureSettings("Standalone");
+        win.overridden = true;
+        win.maxTextureSize = ti.maxTextureSize;
+        win.textureCompression = TextureImporterCompression.Uncompressed;
+        win.format = TextureImporterFormat.BC7;
+        win.maxTextureSize = 4096;
+        win.resizeAlgorithm = TextureResizeAlgorithm.Mitchell;
+
+        ti.SetPlatformTextureSettings(win);
+        ti.SaveAndReimport();
     }
 }
